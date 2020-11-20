@@ -2,6 +2,7 @@
 - `# useradd <ten_user>` : Thêm 1 user vào hệ thống
 ![anh1](https://image.prntscr.com/image/NamEACb6TUe3a5P9YpFoWg.png)
 - `# passwd  <ten_user>` : cập nhật mật khẩu cho user
+- Đăng nhâp 1 tài khoản user khác :#su <'username'>
 - Tạo 1 thư mục mới: `# mkdir <ten_thu_muc>`
 ![anh2](https://image.prntscr.com/image/kjqyqqnCTv6_WrFAnybl9A.png)
 - Tạo 1 tập tin: `# touch <ten_tap_tin>`
@@ -37,3 +38,34 @@ echo chỉ có quyền thêm vào tệp tin
  ![anh7](https://image.prntscr.com/image/UrXn3Q8jSQWAmP7tIQrjIA.png)
  - Chuyển các tệp vào thư mục : #mv <'tên tệp'> <'tên thư mục'>
 ![anh8](https://image.prntscr.com/image/02rse4jTSA_Ai2TADN09bA.png)
+# Lệnh nén và giải nén
+
+- Các option dùng với lệnh `tar`
+    - `c` : tạo file nén .tar.
+    - `x` : bung file nén .tar.
+    - `v` : show quá trình nén hoặc giải nén dữ liệu ra màn hình.
+    - `f` : chỉ định nén thành file.
+    - `t` : Xem dữ liệu trong file nén.
+    - `j` : tạo file nén với bzip2 có định dạng file.tar.bz2
+    - `z` : tạo file nén với gzip có định dạng file.tar.gz.
+    - `r` : thêm một file và thư mục vào file nén đã tồn tại.
+    - `--wildcards` : tìm và xuất file bất kỳ trong file nén.
+    ## 1. Các lệnh nén:
+- Nén file/thư mục sang định dạng ".tar": `# tar -cvf`
+
+    - `# tar -cvf filenenA.tar /root/A` : nén thư mục A thành file nén `filenenA.tar` và show quá trình nén.
+
+-  Nén file/thư mục sang định dạng ".tar.gz": `# tar -cvzf`
+    - `# tar -cvzf filenenA.tar.gz /root/A`
+
+- Nén định dạng ".tar.bz2": `# tar -cvjf`
+    - `# tar -cvjf filenenA.tar.gz /root/A`
+
+Nếu cùng 1 dữ liệu thì tỉ lệ nén cao nhất là:  `.tar.bz2 > .tar.gz > .tar` 
+
+![anh9](https://image.prntscr.com/image/9dgMMaZGQ5mQW45xpVsKCQ.png)
+## 2. Các lệnh giải nén:
+- `# tar -xvf filenen.tar -C /root/A`
+- `# tar -xvf filenen.tar.gz -C /root/A`
+- `# tar -xvf filenen.tar.bz2 -C /root/A`
+![anh10](https://image.prntscr.com/image/kYjN1i6AQa6qsxUxA1FAhw.png)
