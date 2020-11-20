@@ -19,6 +19,7 @@ echo chỉ có quyền thêm vào tệp tin
     - Nhấn phím **I** (INSERT): chuyển sang trạng thái nhập văn bản.
     - Nhấn phím **Esc**: thoát khỏi trạng thái nhập
     - Nhập `:wq` (Để lưu sửa đổi file) hoặc `:q!` (Để thoát mà không lưu sửa đổi)
+
 ![anh5](https://image.prntscr.com/image/h6gXQ3y1R9um_NkdjTOHjA.png)
 
 - Mở tập tin: `# cat <tap_tin>`
@@ -32,11 +33,14 @@ echo chỉ có quyền thêm vào tệp tin
     ```
     # touch A.txt
     # cp A.txt B.txt 
+
 ![anh6](https://image.prntscr.com/image/8_WGtE6fRWydrNLIiKWfYw.png)
     '''
  - Đăng nhâp vào thu mục hoặc user : #cd<'tên thư mục hoặc tên user'>
+
  ![anh7](https://image.prntscr.com/image/UrXn3Q8jSQWAmP7tIQrjIA.png)
  - Chuyển các tệp vào thư mục : #mv <'tên tệp'> <'tên thư mục'>
+
 ![anh8](https://image.prntscr.com/image/02rse4jTSA_Ai2TADN09bA.png)
 # Lệnh nén và giải nén
 
