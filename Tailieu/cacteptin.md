@@ -1,17 +1,21 @@
 # Thao tác tệp tin
 - `# useradd <ten_user>` : Thêm 1 user vào hệ thống
+
 ![anh1](https://image.prntscr.com/image/NamEACb6TUe3a5P9YpFoWg.png)
 - `# passwd  <ten_user>` : cập nhật mật khẩu cho user
 - Đăng nhâp 1 tài khoản user khác :#su <'username'>
 - Tạo 1 thư mục mới: `# mkdir <ten_thu_muc>`
+
 ![anh2](https://image.prntscr.com/image/kjqyqqnCTv6_WrFAnybl9A.png)
 - Tạo 1 tập tin: `# touch <ten_tap_tin>`
 để kiểm tra dùng lệnh
 - Lấy danh sách các file và thư mục hiện hành: `# ls` 
 - Lấy danh sách file và thư mục chi tiết: `# ll
+
 ![anh3](https://image.prntscr.com/image/FxCADDKRQe_1CfTSo10LLg.png)
 - Tạo 1 tập tin dạng text: `# echo "" >> ~/<tên_tập tin>` 
 echo chỉ có quyền thêm vào tệp tin 
+
 ![anh4](https://image.prntscr.com/image/o3Xq9XEPSmWLTC_0qaMTpQ.png)
 - Khởi chạy trình soạn thảo Vi: lệnh vi có quyền sửa xóa
     - Câu lệnh `vi <ten_file> `
@@ -72,4 +76,5 @@ Nếu cùng 1 dữ liệu thì tỉ lệ nén cao nhất là:  `.tar.bz2 > .tar.
 - `# tar -xvf filenen.tar -C /root/A`
 - `# tar -xvf filenen.tar.gz -C /root/A`
 - `# tar -xvf filenen.tar.bz2 -C /root/A`
+
 ![anh10](https://image.prntscr.com/image/kYjN1i6AQa6qsxUxA1FAhw.png)
