@@ -25,7 +25,7 @@
 - Chuyển thư mục (change directory): `# cd`
     - `cd /duong/dan/tuyet/doi` : chuyển tới thư mục `/doi/`
 
-   ![anh2](https://image.prntscr.com/image/gnmNer_JQU6w8y4eyo3UQA.png)
+![anh2](https://image.prntscr.com/image/gnmNer_JQU6w8y4eyo3UQA.png)
 
     - `cd` : chuyển về thư mục chính của người dùng
     - `cd A && ls` : chuyển tới thư mục A và hiện danh sách các file của nó.
@@ -42,16 +42,25 @@
     - `rm <tap_tin_1> <tap_tin_2>` ... : xóa nhiều tập tin
     - `rm /a/b/c/<tap_tin>` : xóa tập tin theo đường dẫn
     - `rm -i <ten_tep_tin>` : xóa có xác nhận
+
+![anh4](https://image.prntscr.com/image/KLLm3a8aTq6Sf0FqIcnQmA.png)
+
     - `rm -f <ten_tap_tin>` : xóa không xác nhận
+
+![anh5](https://image.prntscr.com/image/cAx2vSd0TAmYN7rbUp4cig.png)
+
     - `rm -I <ten_thu_muc>/file*` : xóa hàng loạt file có kiểu `file[...]`
 - Xóa thư mục: `# rmdir`
-    - `rmdir <ten_thu_muc>` hoặc `rm -d` : xóa 1 thư mục rỗng
+    - `rmdir <ten_thu_muc>` hoặc `rm -d` : xóa 1 thư mục rỗng không chứa tệp tin nào
     - `rm -r <ten_thu_muc>` : xóa thư mục chứa các thư mục con và tập tin có xác nhận từng đối tượng.
 
 - Mở tập tin: `# cat <tap_tin>`
 
 - Khởi chạy trình soạn thảo Vi: 
     - Câu lệnh `vi <ten_file> `
+
+![anh6](https://image.prntscr.com/image/cVizl7RRRRSj5I2cZPywHA.png)
+
     - Nếu file chưa tồn tại thì hệ thống sẽ tạo ra file đó.
     - Nhấn phím **I** (INSERT): chuyển sang trạng thái nhập văn bản.
     - Nhấn phím **Esc**: thoát khỏi trạng thái nhập
@@ -62,6 +71,9 @@
     ```
     # touch A.txt
     # cp A.txt B.txt
+
+![anh7](https://image.prntscr.com/image/x0DToBFRQsywAUX2pILTwA.png)   
+ 
     ```
     - Copy nhiều file vào 1 thư mục khác:
     ```
