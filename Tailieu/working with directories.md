@@ -27,3 +27,29 @@ có thể thay đổi thư mục hiện tại của mình bằng câu lệnh cd
 
 ## 8.3 Absolute and relative paths
 "Đường dẫn tuyệt đối và tương đối"
+- Bạn nên biết các đường dẫn tuyệt đối và tương đối trong cây tệp. Khi bạn nhập một đường dẫn
+bắt đầu bằng dấu gạch chéo (/), thì gốc của cây tệp được giả định. Nếu bạn không bắt đầu con đường của mình
+với một dấu gạch chéo, thì thư mục hiện tại là điểm bắt đầu giả định.
+'''
+- Ảnh chụp màn hình bên dưới trước tiên hiển thị thư mục / home / paul hiện tại. Từ bên trong này
+thư mục, bạn phải gõ cd / home thay vì cd home để chuyển đến thư mục / home.
+
+![anh6](https://image.prntscr.com/image/7Vncn7-hTpqkmHFNaFeeNg.png)
+
+- Khi ở trong / home, bạn phải nhập cd huy13 thay vì cd / huy13 để vào thư mục con huy13 của thư mục / nhà hiện tại.
+
+![anh7](https://image.prntscr.com/image/O_HkL8jCS7m-XrralLaLgg.png)
+
+- Trong trường hợp thư mục hiện tại của bạn là thư mục gốc / "root", thì cả cd / home và cd home sẽ đưa bạn vào thư mục / home
+
+![anh8](https://image.prntscr.com/image/lqT8arGhQtGM7dpqXNZVkQ.png)
+
+## 8.4 path completion
+
+- Phím tab có thể giúp bạn nhập đường dẫn mà không bị lỗi. Nhập cd / et theo sau là tab
+phím sẽ mở rộng dòng lệnh thành cd / etc /. Khi gõ cd / Et sau đó là phím tab,
+sẽ không có gì xảy ra vì bạn đã gõ sai đường dẫn (chữ E viết hoa).
+Bạn sẽ cần ít lần gõ phím hơn khi sử dụng phím tab và bạn sẽ chắc chắn rằng mình đã nhập
+đường dẫn là chính xác!
+
+![anh9](https://image.prntscr.com/image/uXsUivsOSZq6iquHZLQZew.png)
