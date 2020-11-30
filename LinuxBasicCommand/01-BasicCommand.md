@@ -11,6 +11,7 @@
 
 ![anh0](https://image.prntscr.com/image/hJKkS9bpQPyKYn7_-R87KA.png)
 - Thêm 1 user để sử dụng quyền sudo: `# usermod -aG wheel <username>`
+(quyền sudo được cấp quyền cao nhất cho user)
 
 ![anh1](https://image.prntscr.com/image/ZnSMObcOTciJeQHXjdmtBw.png)
 
@@ -23,10 +24,16 @@
 - Lấy danh sách file và thư mục chi tiết: `# ll` 
 - Chuyển thư mục (change directory): `# cd`
     - `cd /duong/dan/tuyet/doi` : chuyển tới thư mục `/doi/`
+
+   ![anh2](https://image.prntscr.com/image/gnmNer_JQU6w8y4eyo3UQA.png)
+
     - `cd` : chuyển về thư mục chính của người dùng
     - `cd A && ls` : chuyển tới thư mục A và hiện danh sách các file của nó.
     - `cd` -: chuyển về thư mục đang làm việc trước đó.
     - `cd ..` : chuyển về thư mục cha.
+
+![anh3](https://image.prntscr.com/image/xP3FxZFER0OS5Wd3xPy6Tw.png)
+
 - Tạo 1 thư mục mới: `# mkdir <ten_thu_muc>`
 - Tạo 1 tập tin: `# touch <ten_tap_tin>` 
 - Tạo 1 tập tin dạng text: `# echo "" >> ~/<tên_tập tin>` 
