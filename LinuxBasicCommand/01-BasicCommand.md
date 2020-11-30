@@ -9,6 +9,7 @@
 - `# who` : cho biết user nào đang sử dụng hệ thống
 - `# top` : tương tự như Task Manager của Window
 - Thêm 1 user để sử dụng quyền sudo: `# usermod -aG wheel <username>`
+![anh1](https://image.prntscr.com/image/ZnSMObcOTciJeQHXjdmtBw.png)
 - Đăng nhập 1 tài khoản user khác: `# su - <username>`
 
 # Thao tác trên tập tin
