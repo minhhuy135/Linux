@@ -8,6 +8,8 @@
 - `# passwd  <ten_user>` : cập nhật mật khẩu cho user
 - `# who` : cho biết user nào đang sử dụng hệ thống
 - `# top` : tương tự như Task Manager của Window
+
+![anh0](https://image.prntscr.com/image/hJKkS9bpQPyKYn7_-R87KA.png)
 - Thêm 1 user để sử dụng quyền sudo: `# usermod -aG wheel <username>`
 
 ![anh1](https://image.prntscr.com/image/ZnSMObcOTciJeQHXjdmtBw.png)
