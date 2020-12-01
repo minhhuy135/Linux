@@ -13,6 +13,7 @@ Cả hai hệ thống quản lý gói cung cấp hai mức công cụ:
 """
 YUM là gì?
 YUM là một công cụ quản lý và cài đặt phần mềm rất tiện dụng cho các hệ thống Red Hat Linux. Nó có thể cài đặt các gói mới hoặc cập nhật các gói đã tồn tại trên hệ thống một cách tự động và tiện lợi thông qua vài dòng lệnh đơn giản. YUM được viết tắt từ “Yellow dog Update, Modified” được phát triển bởi&nbsp;Duke University.&nbsp;Lệnh này được hỗ trợ trên Red Hat Enterprise Linux (RHEL) và các bản phân phối của nó bao gồm :&nbsp;Red Hat Enterprise Linux,&nbsp;Fedora,&nbsp;CentOS
+
 ""
 Thông thường khi bạn cài hệ điều hành CentOS thì YUM đã được tích hợp sẵn. Để kiểm tra xem server đã có YUM hay chưa thì ta dùng dòng lệnh sau :
 
