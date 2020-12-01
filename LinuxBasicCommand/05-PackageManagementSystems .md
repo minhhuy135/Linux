@@ -10,6 +10,18 @@ Các phần cốt lõi của các bản phân phối Linux và hầu hết các 
 Cả hai hệ thống quản lý gói cung cấp hai mức công cụ: 
 - Một công cụ cấp thấp (ví dụ như `dpkghay` `rpm`), sẽ chăm sóc của các chi tiết của giải nén gói cá nhân, chạy các kịch bản, nhận được các phần mềm được cài đặt một cách chính xác.
 - Một công cụ cấp cao (ví dụ như `apt-get`, `yum`, hoặc `zypper`) hoạt động với các nhóm gói, tải gói từ nhà cung cấp và tìm ra các phụ thuộc
+"""
+YUM là gì?
+YUM là một công cụ quản lý và cài đặt phần mềm rất tiện dụng cho các hệ thống Red Hat Linux. Nó có thể cài đặt các gói mới hoặc cập nhật các gói đã tồn tại trên hệ thống một cách tự động và tiện lợi thông qua vài dòng lệnh đơn giản. YUM được viết tắt từ “Yellow dog Update, Modified” được phát triển bởi&nbsp;Duke University.&nbsp;Lệnh này được hỗ trợ trên Red Hat Enterprise Linux (RHEL) và các bản phân phối của nó bao gồm :&nbsp;Red Hat Enterprise Linux,&nbsp;Fedora,&nbsp;CentOS
+""
+Thông thường khi bạn cài hệ điều hành CentOS thì YUM đã được tích hợp sẵn. Để kiểm tra xem server đã có YUM hay chưa thì ta dùng dòng lệnh sau :
+
+## yum --version
+
+Nếu xuất hiện thông báo tương tự như bên dưới thì có nghĩa là Server của bạn đã được cài đặt YUM :
+
+![anh1](https://image.prntscr.com/image/LwIViBMMTbuZ5VYMzhvlHA.png)
+
 
 Hầu hết thời gian người dùng chỉ cần làm việc với công cụ cấp cao, công việc này sẽ đảm nhiệm việc gọi công cụ cấp thấp khi cần thiết. Theo dõi phụ thuộc là một tính năng đặc biệt quan trọng của công cụ cấp cao, vì nó xử lý các chi tiết tìm kiếm và cài đặt từng phụ thuộc cho bạn. Tuy nhiên, hãy cẩn thận, vì cài đặt một gói duy nhất có thể dẫn đến hàng chục hoặc thậm chí hàng trăm gói phụ thuộc được cài đặt.
 
