@@ -242,3 +242,6 @@ XEM THÊM
         sẽ cung cấp cho bạn quyền truy cập vào hướng dẫn hoàn chỉnh.
 
 GNU coreutils 8.22 tháng tám, 2019 LS (1)
+
+## 7.1. man $command
+man command trong Linux được sử dụng để hiển thị hướng dẫn sử dụng của bất kỳ lệnh nào mà chúng ta có thể chạy trên terminal. Nó cung cấp một cái nhìn chi tiết về lệnh bao gồm TÊN, TỔNG HỢP, MÔ TẢ, TÙY CHỌN, TÌNH TRẠNG THOÁT, TRẢ LẠI GIÁ TRỊ, LỖI, LỌC, PHIÊN BẢN, VÍ DỤ, TÁC GIẢ và XEM CŨNG
