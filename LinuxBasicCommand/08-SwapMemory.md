@@ -8,30 +8,30 @@
 - Tránh các trường hợp không lườn trước : trông một số trường hợp , bạn không dự tính được bộ nhớ dành cho các chương trình mà bạn chuẩn bị thử nghiệm , hoặc một chương trình bất kỳ nào đó bất thường .
 - Linux Swap có 2 dạng : phân vùng và File để xem nó ở đâu hãy sử dụng lệnh :
  
- '''
+ 
   #swapon:
 
- ![Anh0](https://image.prntscr.com/image/G6UJR1sHShOqED9kqGUg5A.png)
+![Anh0](https://image.prntscr.com/image/G6UJR1sHShOqED9kqGUg5A.png)
 
- '''
+
 
 ## 3. Tạo swap
 - Tạo Swap file 
-```
-#sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
 
-![Anh1](https://image.prntscr.com/image/9TBuvSpeQTutKyOkKWOb6A.png)
+ #sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+
+![anh1](https://image.prntscr.com/image/9TBuvSpeQTutKyOkKWOb6A.png)
 
     bs: kích thướng Swap File
     count: tốc độ
-    ```
+    
     - Tạo phân vùng swap
-    ```
+
     #mkswap /swapfile
 
 ![anh2](https://image.prntscr.com/image/j1n_i1IpRLuLIe_sHLWxCg.png)
 
-    ```
+    
 - Kích hoạt swap
     ```
     #swapon /swapfile
