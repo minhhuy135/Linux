@@ -7,15 +7,18 @@
 - Tối ưu hóa bộ nhớ : Hệ thống sẽ di chuyển các tài nguyên và dữ liệu hiện không được sử dụng trong bộ nhớ RAM đến Swap , điều này giúp hệ thống phục vụ cho các mục đích khác tốt hơn
 - Tránh các trường hợp không lườn trước : trông một số trường hợp , bạn không dự tính được bộ nhớ dành cho các chương trình mà bạn chuẩn bị thử nghiệm , hoặc một chương trình bất kỳ nào đó bất thường .
 - Linux Swap có 2 dạng : phân vùng và File để xem nó ở đâu hãy sử dụng lệnh :
+ 
  '''
- #swapon:
-'''
- ![Anh1](https://image.prntscr.com/image/G6UJR1sHShOqED9kqGUg5A.png)
+  #swapon:
+
+ ![Anh0](https://image.prntscr.com/image/G6UJR1sHShOqED9kqGUg5A.png)
+
+ '''
 
 ## 3. Tạo swap
 - Tạo Swap file 
-  ```
-    #sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+```
+#sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
 
 ![Anh1](https://image.prntscr.com/image/9TBuvSpeQTutKyOkKWOb6A.png)
 
