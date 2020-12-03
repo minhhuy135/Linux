@@ -164,3 +164,16 @@ nó sẽ xóa bất kỳ thứ gì (với điều kiện bạn có quyền làm 
 đã đăng nhập với quyền root, hãy rất cẩn thận với rm -rf (f có nghĩa là lực và r có nghĩa là đệ quy)
 vì là root ngụ ý rằng các quyền không áp dụng cho bạn. Bạn có thể xóa
 tình cờ toàn bộ hệ thống tệp
+## 9.6. cp
+## 9.6.1. copy one file
+
+Để sao chép một tệp, hãy sử dụng cp với một đối số nguồn và đích.
+
+![anh4](https://image.prntscr.com/image/E5NV6TAuRpKqvAw2FKeJhg.png)
+
+## 9.6.3. cp -r
+
+Để sao chép các thư mục hoàn chỉnh, hãy sử dụng cp -r (tùy chọn -r buộc sao chép đệ quy tất cả các tệp
+trong tất cả các thư mục con)
+
+![anh2](https://image.prntscr.com/image/0r0nnMbuQNulS69R5zIaCA.png)
