@@ -244,4 +244,18 @@ XEM THÊM
 GNU coreutils 8.22 tháng tám, 2019 LS (1)
 
 ## 7.1. man $command
-man command trong Linux được sử dụng để hiển thị hướng dẫn sử dụng của bất kỳ lệnh nào mà chúng ta có thể chạy trên terminal. Nó cung cấp một cái nhìn chi tiết về lệnh bao gồm TÊN, TỔNG HỢP, MÔ TẢ, TÙY CHỌN, TÌNH TRẠNG THOÁT, TRẢ LẠI GIÁ TRỊ, LỖI, LỌC, PHIÊN BẢN, VÍ DỤ, TÁC GIẢ và XEM CŨNG
+man command trong Linux được sử dụng để hiển thị hướng dẫn sử dụng của bất kỳ lệnh nào mà chúng ta có thể chạy trên terminal. Nó cung cấp một cái nhìn chi tiết về lệnh bao gồm TÊN, TỔNG HỢP, MÔ TẢ, TÙY CHỌN, TÌNH TRẠNG THOÁT, TRẢ LẠI GIÁ TRỊ, LỖI, LỌC, PHIÊN BẢN, VÍ DỤ, TÁC GIẢ và XEM CŨNG 
+
+'''
+paul @ laika: ~ $man whois
+Đang định dạng lại whois (1),vui lòng đợi ...
+
+## 7.2. man $configfile
+man.config - dữ liệu cấu hình cho người đàn ông
+Sự miêu tả
+Tệp này được đọc bởi người đàn ông (1) và chứa (a) thông tin về cách tạo đường dẫn tìm kiếm cho người đàn ông, (b) tên đường dẫn đầy đủ cho các chương trình khác nhau như nroff, eqn, tbl, v.v. được sử dụng bởi người đàn ông và (c) danh sách có trình giải nén cho các tệp có phần mở rộng nhất định. Một phiên bản thay thế của tệp này có thể được chỉ định bằng
+
+man -C private_man.config ...
+Tên lệnh có thể được cung cấp với các tùy chọn. Các tùy chọn hữu ích để nroff có thể được tìm thấy trong grotty (1) . Ví dụ: thay vì dòng mặc định
+
+NROFF / usr / bin / groff -mandoc -Tlatin1
