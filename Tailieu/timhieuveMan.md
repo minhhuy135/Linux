@@ -260,3 +260,14 @@ man -C private_man.config ...
 Tên lệnh có thể được cung cấp với các tùy chọn. Các tùy chọn hữu ích để nroff có thể được tìm thấy trong grotty (1) . Ví dụ: thay vì dòng mặc định
 
 NROFF / usr / bin / groff -mandoc -Tlatin1
+
+## 7.3. man $daemon
+
+ Daemon là một quy trình dịch vụ chạy ở chế độ nền và
+       giám sát hệ thống hoặc cung cấp chức năng cho các quy trình khác.
+       Theo truyền thống, các daemon được triển khai theo một lược đồ có nguồn gốc
+       trong SysV Unix. Daemon hiện đại nên làm theo một cách đơn giản hơn nhưng nhiều hơn
+       lược đồ mạnh mẽ (ở đây được gọi là daemon "kiểu mới"), được triển khai bởi
+       systemd (1) . Trang hướng dẫn sử dụng này bao gồm cả hai chương trình và cụ thể là
+       bao gồm các khuyến nghị cho các daemon sẽ được bao gồm trong
+       hệ thống init systemd.
