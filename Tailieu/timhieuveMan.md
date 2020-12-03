@@ -271,3 +271,8 @@ NROFF / usr / bin / groff -mandoc -Tlatin1
        systemd (1) . Trang hướng dẫn sử dụng này bao gồm cả hai chương trình và cụ thể là
        bao gồm các khuyến nghị cho các daemon sẽ được bao gồm trong
        hệ thống init systemd.
+
+## 7.5. whatis
+
+
+Để chỉ xem mô tả của một trang thủ công, hãy sử dụng whatis theo sau là một chuỗi
