@@ -248,8 +248,9 @@ man command trong Linux được sử dụng để hiển thị hướng dẫn s
 
 '''
 paul @ laika: ~ $man whois
-Đang định dạng lại whois (1),vui lòng đợi ...
 
+Đang định dạng lại whois (1),vui lòng đợi ...
+'''
 ## 7.2. man $configfile
 man.config - dữ liệu cấu hình cho người đàn ông
 Sự miêu tả
