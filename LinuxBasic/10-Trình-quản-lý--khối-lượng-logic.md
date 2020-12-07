@@ -74,3 +74,17 @@ Attr: Trạng thái của Volume group có thể ghi, có thể đọc, có th�
 - Total PE: Dung lượng Volume Group có
 - Alloc PE: Tổng PE đã sử dụng
 - Free PE: Tổng PE chưa được sử dụng
+# Tạo Logical Volume
+Lệnh kiểm tra xem có những LV nào: # lvs
+
+![anh6](https://image.prntscr.com/image/R1SMFbvcSOqMBz9NsaJG6w.png)
+
+- Ta tạo 2 Logical volume là Data và Backups như đã nói ở trên.
+
+![anh7](https://image.prntscr.com/image/LLn8fioqTHOjaIZAbSHvpg.png)
+
+Trong đó:
+
+-n <ten_logical_volume>
+-L : Sử dụng kích thước cố định
+-l : Sử dụng % của không gian còn lại trong Volume
