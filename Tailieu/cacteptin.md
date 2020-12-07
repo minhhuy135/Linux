@@ -195,5 +195,11 @@ Sử dụng mv để đổi tên tệp
 hoặc di chuyển tệp sang thư mục khác
 
 ![anh7](https://image.prntscr.com/image/8p22-Ka8THyvlPXSkP2Sdg.png)
+# 9.7.2. đổi tên thư mục bằng mv
+
+Lệnh mv tương tự có thể được sử dụng để đổi tên các thư mục
+
+![anh8](https://image.prntscr.com/image/fMdFeUttR-i5VHh_PDKjAw.png)
 
 
+# 9.8.3. rename on CentOS/RHEL/Fedora
