@@ -177,3 +177,23 @@ tình cờ toàn bộ hệ thống tệp
 trong tất cả các thư mục con)
 
 ![anh2](https://image.prntscr.com/image/0r0nnMbuQNulS69R5zIaCA.png)
+
+## 9.6.5. cp -i
+
+Để ngăn cp ghi đè lên các tệp hiện có, hãy sử dụng tùy chọn -i (để tương tác).
+
+![anh5](https://image.prntscr.com/image/v_fstxzgTCueHQkL4uQqzg.png)
+
+
+# 9.7. mv
+## 9.7.1. đổi tên tệp bằng mv
+
+Sử dụng mv để đổi tên tệp 
+
+![anh6](https://image.prntscr.com/image/Sax9vs8WTJ_U9-bRys5kaw.png)
+
+hoặc di chuyển tệp sang thư mục khác
+
+![anh7](https://image.prntscr.com/image/8p22-Ka8THyvlPXSkP2Sdg.png)
+
+
