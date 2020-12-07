@@ -28,6 +28,11 @@ Liệt kê các phân vùng ổ cứng trong hệ thống.
 
 ![anh1](https://image.prntscr.com/image/XdUPA8epTCqQhymp0NZJKA.png)
 
+# Kiểm tra các phân vùng có sẵn
+Để xem các thiết bị hiện có và các hệ thống tệp riêng biệt của chúng, chỉ cần sử dụng lệnh sau:
+
+![anhd](https://image.prntscr.com/image/MP1gPAB5RVm7vWh5Ph9dnQ.png)
+
 # Tạo Physical Volume
 - Tạo 2 Physical Volume từ 2 ổ `sdb` và `sdc`: 
 `# pvcreate /dev/sdb /dev/sdc`
@@ -47,9 +52,25 @@ Liệt kê các phân vùng ổ cứng trong hệ thống.
 
 ![anh4](https://image.prntscr.com/image/6njzUtxoRqKD1X1x71oclg.png)
 
+VG: Tên Volume Group
+- PV: Physical Volume sử dụng trong Volume Group
+- VFree: Hiển thị không gian trống có sẵn trong Volume Group
+- VSize: Tổng kích thước của Volume Group
+- LV: Logical Volume nằm trong volume group
+- SN: Số lượng Snapshot của volume group
+Attr: Trạng thái của Volume group có thể ghi, có thể đọc, có thể thay đổi,
+
 - Xem lại thông tin về VG0 ta vừa tạo:
 [root@localhost ~]# vgdisplay
 
 ![anh5](https://image.prntscr.com/image/8EsK5mWqRw6LbGCv9op2bQ.png)
 
 - Ý nghĩa các thông tin của Volume group khi chạy lệnh vgdisplay:
+- VG Name: Tên Volume Group.
+- Format: Kiến trúc LVM được sử dụng.
+- VG Access: Volume Group có thể đọc và viết và sẵn sàng để sử dụng.
+- VG Status: Volume Group có thể được định cỡ lại, chúng ta có thể mở rộng thêm nếu cần thêm dung lượng.
+- PE Size: Mở rộng Physical, Kích thước cho đĩa có thể được xác định bằng kích thước PE hoặc GB, 4MB là kích thước PE mặc định của LVM
+- Total PE: Dung lượng Volume Group có
+- Alloc PE: Tổng PE đã sử dụng
+- Free PE: Tổng PE chưa được sử dụng
