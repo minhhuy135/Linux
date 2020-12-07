@@ -85,6 +85,6 @@ Lệnh kiểm tra xem có những LV nào: # lvs
 
 Trong đó:
 
--n <ten_logical_volume>
+-n <'ten_logical_volume>
 -L : Sử dụng kích thước cố định
 -l : Sử dụng % của không gian còn lại trong Volume
