@@ -16,6 +16,9 @@ LVM được sử dụng cho các mục đích sau
 - Mã hóa nhiều phân vùng vật lý bằng một mật khẩu.
 
 Cơ bản, **LVM**(Logical Volume Manager) bao gồm :
+
+![anhd](https://image.prntscr.com/image/1byiNmycRbyx8l_EbV4zog.png)
+
 - **Physical volumes**: là những đĩa cứng vật lý hoặc phân vùng trên nó.
 (`/dev/fileserver/share, /dev/fileserver/backup, /dev/fileserver/media`)
 - **Volume groups**: là một nhóm bao gồm các Physical volumes. Có thể xem Volume group như 1 “ổ đĩa ảo”.
