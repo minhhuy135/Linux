@@ -149,3 +149,25 @@ Ta sẽ định dạng Logical Volume ở dạng ext4:
 ![anh15](https://image.prntscr.com/image/pcbqKftVROunL4M1SXKXFA.png)
 
 -> Không thấy lỗi
+
+Mount lại file system và kiểm tra kích thước của nó. # mount /dev/VG0/Backups /Backups/
+
+![anh16](https://image.prntscr.com/image/GAltt6WZSCa80vaZ5Ij8IQ.png)
+
+# Thay đổi dung lượng
+Thay đổi dung lượng physical volume ta sử dụng lệnh theo cú pháp
+
+lvextend -L (n) /dev/(tên group)/(tên logical)
+
+Trong đó
+
+- lvextend : là lệnh tăng dung lượng
+- lvreduce : là lệnh dùng để giảm dung lượng
+- -L : là option của lệnh
+- (n) : là số dùng để tăng giảm dung lượng theo ý muốn của ta
+
+Giảm kích thước Logical volume Backups
+
+Ta sử dụng lệnh # lvreduce -L (n) /dev/<tên_group>/<tên_logical>
+
+![anh18](https://image.prntscr.com/image/hOMEVfI0T_K2KmleCM6G-w.png)
