@@ -1,3 +1,22 @@
+# 7.1. man $command
+man command trong Linux được sử dụng để hiển thị hướng dẫn sử dụng của bất kỳ lệnh nào mà chúng ta có thể chạy trên terminal. Nó cung cấp một cái nhìn chi tiết về lệnh bao gồm TÊN, TỔNG HỢP, MÔ TẢ, TÙY CHỌN, TÌNH TRẠNG THOÁT, TRẢ LẠI GIÁ TRỊ, LỖI, LỌC, PHIÊN BẢN, VÍ DỤ, TÁC GIẢ và XEM CŨNG
+
+''' paul @ laika: ~ $man whois
+
+Đang định dạng lại whois (1),vui lòng đợi ... '''
+
+# 7.2. man $configfile
+man.config - dữ liệu cấu hình cho người đàn ông Sự miêu tả Tệp này được đọc bởi người đàn ông (1) và chứa (a) thông tin về cách tạo đường dẫn tìm kiếm cho người đàn ông, (b) tên đường dẫn đầy đủ cho các chương trình khác nhau như nroff, eqn, tbl, v.v. được sử dụng bởi người đàn ông và (c) danh sách có trình giải nén cho các tệp có phần mở rộng nhất định. Một phiên bản thay thế của tệp này có thể được chỉ định bằng
+
+man -C private_man.config ... Tên lệnh có thể được cung cấp với các tùy chọn. Các tùy chọn hữu ích để nroff có thể được tìm thấy trong grotty (1) . Ví dụ: thay vì dòng mặc định
+
+NROFF / usr / bin / groff -mandoc -Tlatin1
+
+# 7.3. man $daemon
+Daemon là một quy trình dịch vụ chạy ở chế độ nền và giám sát hệ thống hoặc cung cấp chức năng cho các quy trình khác. Theo truyền thống, các daemon được triển khai theo một lược đồ có nguồn gốc trong SysV Unix. Daemon hiện đại nên làm theo một cách đơn giản hơn nhưng nhiều hơn lược đồ mạnh mẽ (ở đây được gọi là daemon "kiểu mới"), được triển khai bởi systemd (1) . Trang hướng dẫn sử dụng này bao gồm cả hai chương trình và cụ thể là bao gồm các khuyến nghị cho các daemon sẽ được bao gồm trong hệ thống init systemd.
+
+# 7.4. man -k (apropos)
+apropos tìm kiếm một tập hợp các tệp cơ sở dữ liệu chứa các mô tả ngắn về các lệnh hệ thống cho các từ khóa và hiển thị kết quả trên đầu ra tiêu chuẩn.
 # Thao tác tệp tin
 - `# useradd <ten_user>` : Thêm 1 user vào hệ thống
 
