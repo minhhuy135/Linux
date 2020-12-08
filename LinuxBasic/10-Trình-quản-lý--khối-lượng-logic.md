@@ -171,3 +171,40 @@ Giảm kích thước Logical volume Backups
 Ta sử dụng lệnh # lvreduce -L (n) /dev/<tên_group>/<tên_logical>
 
 ![anh18](https://image.prntscr.com/image/hOMEVfI0T_K2KmleCM6G-w.png)
+
+Tăng kích thước Logical volume Backups
+
+Ta sẽ tăng kích thước LV Data lên ~3G(dung lượng còn lại của tổng sdb và sdc) Ta sử dụng lệnh : # lvextend -l +100%FREE /dev/vg0/Backups
+
+[root@localhost ~]# lvextend -l +100%FREE /dev/vg0/Backups
+
+![anh19](https://image.prntscr.com/image/VmaeKiwtQN6B21_p-hlhxA.png)
+
+# Xóa 1 Logical Volume và 1 Group Volume
+Ta sẽ xóa LV Data theo các bước sau:
+
+- Kiểm tra những LV hiện có:
+
+![anh20](https://image.prntscr.com/image/YoMiZTU9TWavjvhA2GerSw.png)
+
+- Umount Data: # umount /Data/
+- Disable LV Data# lvchange -an /dev/VG0/Data
+- Xóa LV Data:
+
+![anh21](https://image.prntscr.com/image/CFOrcmtTQqaa3p0UbtNFxA.png)
+
+- Kiểm tra các danh sách GV: # vgs
+
+![anh22](https://image.prntscr.com/image/dObjW46ZQQ2gL0t16F3sbg.png)
+
+# Xóa 1 Group Volume
+ #vgremove /dev/<tên_Group_Volume>
+- Disable Volume Group : # vgchange -an /dev/vg0
+- Remove GV:
+
+![anh23](https://image.prntscr.com/image/54VsEZlCQ0yWWzlNzqrYSA.png)
+
+Xóa Physical Volume
+Cuối cùng là xóa Physical Volume:
+
+# pvremove /dev/sdb
