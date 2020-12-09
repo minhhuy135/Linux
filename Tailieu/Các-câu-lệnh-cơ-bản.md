@@ -17,6 +17,31 @@ Daemon là một quy trình dịch vụ chạy ở chế độ nền và giám s
 
 # 7.4. man -k (apropos)
 apropos tìm kiếm một tập hợp các tệp cơ sở dữ liệu chứa các mô tả ngắn về các lệnh hệ thống cho các từ khóa và hiển thị kết quả trên đầu ra tiêu chuẩn.
+
+# 7.5. whatis
+Lệnh whatis trong Linux được sử dụng để lấy mô tả trang thủ công một dòng. Trong Linux, mỗi trang hướng dẫn sử dụng có một số loại mô tả bên trong nó. Vì vậy, lệnh này tìm kiếm tên các trang thủ công và hiển thị mô tả trang thủ công của tên tệp hoặc đối số được chỉ định.
+
+Cú pháp:
+
+whatis [-dlv? v] [-r | -w] [-s list] [-m system [,…]] [-M path] [-L locale] [-C file] tên…
+
+# 7.6. whereis
+Lệnh whereis được sử dụng để tìm vị trí của tệp nguồn / nhị phân của một lệnh và các phần hướng dẫn sử dụng cho tệp được chỉ định trong hệ thống Linux.
+
+Cú pháp:
+
+whereis [tùy chọn] tên tệp ...
+Ví dụ 1: Giả sử chúng ta muốn tìm vị trí của lệnh apropos thì chúng ta cần thực hiện lệnh sau trong terminal:
+
+![anha](https://image.prntscr.com/image/yQ3Rruo9Sfy8xGsSRHoYsw.png)
+
+# 7.7. man sections
+Các chương trình thực thi và lệnh shell
+nằm trong phần một.
+
+![anhb](https://image.prntscr.com/image/O2XjAnLtT-qni6ex1DIPaQ.png)
+
+
 # Thao tác tệp tin
 - `# useradd <ten_user>` : Thêm 1 user vào hệ thống
 
