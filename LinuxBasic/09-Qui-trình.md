@@ -18,7 +18,7 @@ Ngoài ra lệnh `ps` cũng cho chúng ta thấy, mỗi một *Process* sẽ có
 
 ### Có thể sử dụng lệnh `top` để xem **live** các *process* đang chạy:
 
-<img src = "https://i.imgur.com/iqZ9nbA.png">
+![anhb](https://image.prntscr.com/image/sOj8sjH1QdWcF2H07mS4pg.png)
 
 - Dòng đầu tiên của `top` hiển thị một bản tóm tắt nhanh chóng về những gì đang xảy ra trong hệ thống :
     - Hệ thống đã hoạt động được bao lâu rồi
