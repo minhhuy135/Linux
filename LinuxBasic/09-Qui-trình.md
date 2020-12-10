@@ -10,7 +10,8 @@ Mình chạy lênh `ps` và show ra các thuộc tính `opid,ppid,user,rss,comma
 
 `ps -e -opid,ppid,user,rss,command`
 
-<img src = "https://i.imgur.com/jzdZeSh.png">
+![anha](https://image.prntscr.com/image/shyyXMFdS5GtI3MNg2XCMA.png)
+
 `ps` có rất nhiều option để chạy, nếu bạn muốn hiểu chỉ tiết, hãy sử dụng `man ps` để biết thêm
 
 Ngoài ra lệnh `ps` cũng cho chúng ta thấy, mỗi một *Process* sẽ có một *Process ID*, và thuộc về một *Process* cha nào đó. *Process ID* là duy nhất đối với mỗi một *process*, tức là 2 *process* khác nhau chắc chắn phải có **PID** khác nhau. Ngoài ra *Process ID* là không thể thay đổi trong khi chạy *process*.
