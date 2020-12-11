@@ -1,5 +1,7 @@
 # Hoán đổi bộ nhớ
 
+- RAM (random access memory) được sử dụng để lưu trữ dữ liệu hay các chương trinh đang thực sự chạy trong máy tính . Thực tế thì các chương trình và dữ liệu không thể được sử dụng bởi máy tính trừ khi chúng được lưu trữ trong RAM . Dữ liệu trong RAM sẽ nhanh chóng mất đi khi chương trình hoặc dữ liệu không được sử dụng trong máy tính hoặc máy tính bị tắt .
+
 ## 1. Swap Memory là gì?
 - Swap memory được sử dụng khi hệ thống của bạn quyết định rằng cần thêm bộ nhớ RAM cho quá trình hoạt động và bộ nhớ Ram hiện tại không đủ để sử dụng . Nếu điều đó xảy ra , các ài nguyên và dữ liệu tạm thời không hoạt động trên bộ nhớ RAM sẽ di chuyển để lưu trữ vào không gian Swap để giải phóng bộ nhớ RAM và sử dụng cho công việc khác .
 
