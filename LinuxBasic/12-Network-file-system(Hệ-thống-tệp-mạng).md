@@ -6,6 +6,12 @@ NFS ( Network File System ) về cơ bản được phát triển để chia s�
 # Lợi ích của NFS
 NFS cho phép truy cập cục bộ vào các tệp từ xa.
 - Nó sử dụng kiến trúc client/server tiêu chuẩn để chia sẻ tệp giữa các máy
+- Với NFS , không cần thiết cả hai máy đều chạy trên cùng một hệ điều hành.
+Với sự trợ giúp của NFS, có thể định cấu hình các giải pháp lưu trữ tập trung.
+- Người dùng có được dữ liệu của họ bất kể vị trí thực tế.
+- Không cần làm mới thủ công cho các tập tin mới.
+- Phiên bản mới hơn của NFS cũng hỗ trợ acl, mount root ảo.
+- Có thể được bảo mật với Tường lửa và Kerberos.
 
 ## 1. Client server là gì?
 
@@ -34,15 +40,19 @@ Ví dụ
 Client hay chính là máy khách, máy trạm – là nơi gửi yêu cầu đến server. Nó tổ chức giao tiếp với người dùng, server và môi trường bên ngoài tại trạm làm việc. Client tiếp nhận yêu cầu của người dùng sau đó thành lập các query string để gửi cho server. Khi nhận được kết quả từ server, client sẽ tổ chức và trình diễn những kết quả đó.  
 
 - 3.2 Server
-Server xử lý yêu cầu gửi đến từ client. Sau khi xử lý xong, server sẽ gửi trả lại kết quả, client có thể tiếp tục xử lý các kết quả này để phục vụ người dùng. Server giao tiếp với môi trường bên ngoài và client tại server, tiếp nhận yêu cầu dưới dạng query string (xâu ký tự). Khi phân tích xong các xâu ký tự, server sẽ xử lý dữ liệu và gửi kết quả về cho client.
+Server xử lý yêu cầu gửi đến từ client. Sau khi xử lý xong, server sẽ gửi trả lại kết quả, client có thể tiếp tục xử lý các kết quả này để phục vụ người dùng. Server giao tiếp với môi trường bên ngoài và client tại server, tiếp nhận yêu cầu dưới dạng query string (xâu ký tự). Khi phân tích xong các xâu ký tự, server sẽ xử lý dữ liệu và gửi kết quả về cho client. 
+    
+## Dịch vụ NFS
+ Đây là một System V-launched. NFS bao gồm portmap và nfs-utils package:
+
+- portmap: Nó ánh xạ các cuộc gọi được thực hiện từ các máy khác đến dịch vụ RPC chính xác (không bắt buộc với NFSv4 ).
+- nfs: Nó dịch các yêu cầu chia sẻ tệp từ xa thành các yêu cầu trên hệ thống tệp cục bộ.
+- rpc.mountd: Dịch vụ này có trách nhiệm lắp và unmount toàn bộ các hệ thống tập tin.
+
+## Các tệp quan trọng cho cấu hình NFS
+- /etc/export: Đây là tệp cấu hình chính của NFS, tất cả các tệp và thư mục đã xuất được xác định trong tệp này ở cuối Máy chủ NFS.
+- /etc/fstab: Để gắn một thư mục NFS trên hệ thống của bạn trên các lần khởi động lại , chúng ta cần tạo một mục trong /etc/fstab.
+- /etc/sysconfig/nfs: Tệp cấu hình của NFS để kiểm soát cổng rpc và các dịch vụ khác đang nghe.
 
 
 
-
-
-Với NFS , không cần thiết cả hai máy đều chạy trên cùng một hệ điều hành.
-Với sự trợ giúp của NFS, có thể định cấu hình các giải pháp lưu trữ tập trung.
-Người dùng có được dữ liệu của họ bất kể vị trí thực tế.
-Không cần làm mới thủ công cho các tập tin mới.
-Phiên bản mới hơn của NFS cũng hỗ trợ acl, mount root ảo.
-Có thể được bảo mật với Tường lửa và Kerberos.
