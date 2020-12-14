@@ -1,4 +1,5 @@
 # Backup data
+![anhd](https://image.prntscr.com/image/RM8GWteqT8yqIfTXpIR5eg.png)
 " Sao lưu dữ liệu "
  
 I. Backup là gì?
