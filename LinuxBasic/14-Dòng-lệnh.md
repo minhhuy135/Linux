@@ -17,3 +17,7 @@ Trong đó:
 \h : hostname
 \W : thư mục đang làm việc
 \$ : kí tự đại diện cho loại tài khoản
+
+Để tùy biến ta chỉ cần thay đổi giá trị của PS1, ta sử dụng lệnh export. Ví dụ:
+
+![anh2](https://image.prntscr.com/image/YNzIis-eR5eWXbAwp_NhBw.png)
