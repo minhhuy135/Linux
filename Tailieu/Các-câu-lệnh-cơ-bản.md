@@ -60,6 +60,14 @@ Bạn sẽ cần ít lần gõ phím hơn khi sử dụng phím tab và bạn s�
 các lệnh như tệp, chạm, rm, cp, mv và đổi tên.
 
 # 8.6. mkdir
+Tạo 1 thư mục
+
+![anh15](https://image.prntscr.com/image/icJgncldSwGN2HHuXlnSRw.png)
+
+# 8.7. rmdir
+xóa 1 thư mục
+
+![anh16](https://image.prntscr.com/image/umtmA1ghSZmK9kfF1TZUgA.png)
 
 # 9.4 touch
 ## 9.4.1 Tạo một tệp trống
@@ -126,3 +134,17 @@ Lệnh mv tương tự có thể được sử dụng để đổi tên các th�
 
 
 # 9.8.3. rename on CentOS/RHEL/Fedora
+Thay đổi tên tệp tên thư mục
+(* thay đổi tất cả các tệp)
+
+![anh18](https://image.prntscr.com/image/VAQFO_FVSPqWXb-asSfvfA.png)
+
+# 10.3. cat
+Hiển thị tập tin lên màn hình dùng để truy cập vào tệp tin
+
+![anh19](https://image.prntscr.com/image/_AK44FpkTMm2h3EtUAefsQ.png)
+
+# 10.4. tac
+Hiển thị tệp tin lên màn hình nhưng ngược lại với cat
+
+![anh19](https://image.prntscr.com/image/kx31mvtMQEOhNePFDT2pSg.png)
