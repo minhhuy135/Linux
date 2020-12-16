@@ -1,29 +1,33 @@
 # **Logical Volume Manager(LVM)**
 
 
-## **Giới thiệu về LVM**
----
-# Lời mở đầu
--Phân chia phân vùng sao cho hợp lý. Cần bao nhiêu GB cho một phân vùng đó là một câu hỏi không thể trả lời được khi ta cài lại hệ điều hành. Vậy làm thế nào để ta có thể tạo mở rộng phân vùng này và thu hẹp phân vùng khác. Thì tôi sẽ giới thiệu cho bạn một phương pháp để có thể làm được việc đó. Đó là Logical Volume Manager (LVM)
-# Khái niệm
-Logical Volume Manager (LVM) : LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ của ổ cứng. Là một phương pháp ấn định không gian ổ đĩa thành những logicalvolume khiến cho việc thay đổi kích thước của một phân vùng trở nên dễ dàng. Điều này thật dễ dàng khi bạn muốn quản lý công việc của mình tại riêng một phân vùng mà muốn mở rộng nó ra lớn hơn.
+Phần 1. Giới thiệu về LVM
+1. LVM là gì ?
+LVM là một công cụ để quản lý phân vùng logic được tạo và phân bổ từ các ổ đĩa vật lý. Với LVM bạn có thể dễ dàng tạo mới, thay đổi kích thước hoặc xóa bỏ phân vùng đã tạo.
 
-LVM được sử dụng cho các mục đích sau
-- Tạo 1 hoặc nhiều phần vùng logic hoặc phân vùng với toàn bộ đĩa cứng (hơi giống với RAID 0, nhưng tương tự như JBOD), cho phép thay đổi kích thước volume.
-- Quản lý trang trại đĩa cứng lớn (Large hard Disk Farms) bằng cách cho phép thêm và thay thế đĩa mà không bị ngừng hoạt động hoặc gián đoạn dịch vụ, kết hợp với trao đổi nóng (hot swapping).
-- Trên các hệ thống nhỏ (như máy tính để bàn), thay vì phải ước tính thời gian cài đặt, phân vùng có thể cần lớn đến mức nào, LVM cho phép các hệ thống tệp dễ dàng thay đổi kích thước khi cần.
-- Thực hiện sao lưu nhất quán bằng cách tạo snapshot nhanh các khối một cách hợp lý.
-- Mã hóa nhiều phân vùng vật lý bằng một mật khẩu.
+Với kỹ thuật Logical Volume Manager (LVM), ta có thể thay đổi kích thước mà không cần phải sửa lại partition table của OS. Nếu muốn mở rộng dung lượng của nó, ta chỉ cần ấn định lại dung lượng mà không cần phân vùng lại, cũng không phải đối mặt với nguy cơ mất dữ liệu khi thay đổi dung lượng như khi thao tác trên Partition.
 
-Cơ bản, **LVM**(Logical Volume Manager) bao gồm :
+2. Cấu trúc LVM
 
-![anhd](https://image.prntscr.com/image/1byiNmycRbyx8l_EbV4zog.png)
+<img src="https://imgur.com/VtGksx7.png">
 
-- **Physical volumes**: là những đĩa cứng vật lý hoặc phân vùng trên nó.
-(`/dev/fileserver/share, /dev/fileserver/backup, /dev/fileserver/media`)
-- **Volume groups**: là một nhóm bao gồm các Physical volumes. Có thể xem Volume group như 1 “ổ đĩa ảo”.
-(`fileserver`)
-- **Logical volumes**: có thể xem như là các “phân vùng ảo” trên “ổ đĩa ảo” bạn có thể thêm vào, gỡ bỏ và thay đổi kích thước một cách nhanh chóng. (`/dev/sda1, /dev/sdb1, /dev/sdc1, /dev/sdd1`)
+- **Hard Drives:** Thiết bị lưu trữ dữ liệu. 
+
+- **Partition:** Partitions là các phân vùng của Hard drives, mỗi Hard drives có 4 partition. Có 2 loại Partition:
+
+    - **Primary partition:** Phân vùng chính, có thể khởi động , mỗi đĩa cứng có thể có tối đa 4 phân vùng này.
+
+    - **Extended partition:** Phân vùng mở rộng.
+
+- **Physical Volumes:** Một ổ đĩa vật lý có thể phân chia thành nhiều phân vùng vật lý gọi là Physical Volumes.
+
+- **Volume Group:** Là một nhóm bao gồm nhiều Physical Volume trên 1 hoặc nhiều ổ đĩa khác nhau được kết hợp lại thành một Volume Group. Volume Group được sử dụng để tạo ra các Logical Volume, trong đó người dùng có thể tạo, thay đổi kích thước, lưu trữ, gỡ bỏ và sử dụng.
+
+<img src="https://imgur.com/gHIAFxL.png">
+
+- **Logical Volume:** Một Volume Group được chia nhỏ thành nhiều Logical Volume. Nó được dùng để mount tới hệ thống tập tin (File System) và được format với những chuẩn định dạng khác nhau như ext2, ext3, ext4…
+
+<img src="https://i.imgur.com/UNmyHQI.png">
 
 ## **Thao tác trên LVM**
 Liệt kê các phân vùng ổ cứng trong hệ thống.
