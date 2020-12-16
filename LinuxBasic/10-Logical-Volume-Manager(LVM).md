@@ -211,3 +211,43 @@ Xóa Physical Volume
 Cuối cùng là xóa Physical Volume:
 
 # pvremove /dev/sdb
+
+## Mounting Logical Volume
+
+Chúng ta cần phải gắn kết vĩnh viễn. Để thực hiện gắn kết vĩnh viễn phải nhập trong tệp /etc/fstab. Bạn có thể sử dụng trình soạn thảo vi để nhập vào:
+
+```
+[root@localhost ~]# vi /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Thu Apr 11 21:36:46 2019
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/cl-root     /                       xfs     defaults        0 0
+UUID=8c1d2c4f-13d0-4ec9-ae3d-f706311400ad /boot                   xfs     defaults        0 0
+
+UUID=9a749152-5f96-4f30-9c28-71a2126388ab /Data ext4 defaults 0 0
+UUID=54005d93-b2d0-4748-8d6c-7f0632f02b59 /Backups ext4 defaults 0 0
+
+```
+Để xác định UUID trên mỗi đĩa. Chúng ta chạy lệnh sau:
+```
+[root@localhost ~]# blkid /dev/vg0/Data
+```
+
+![anh24](https://image.prntscr.com/image/EJRJ9CcqSIeqz5I_vUPSmw.png)
+
+Lưu lại file /etc/fstab và chạy lệnh sau lưu các thay đổi và gắn kết LV:
+```
+[root@localhost ~]# mount -a
+[root@localhost ~]# mount | grep backups
+/dev/mapper/vg0-backups on /backups type ext4 (rw,relatime,seclabel,data=ordered)
+[root@localhost ~]# mount | grep projects
+/dev/mapper/vg0-projects on /projects type ext4 (rw,relatime,seclabel,data=ordered)
+```
+Nếu có lỗi, không reboot server để tránh tình trạng server không thể khởi động. Kiểm tra cấu hình trong file /etc/fstab và chạy lại lệnh cho tới khi không có thông báo lỗi.
+
+![anh25](https://image.prntscr.com/image/F8cL4qLLRCWdmP1Th_7AXg.png)
