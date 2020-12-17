@@ -103,6 +103,7 @@ Trong đó:
 - no_all_squash: cho phép người dùng có quyền truy cập
 
 Start nfs và rpcbind:
+# Khởi động NFS Server
 ```
 
 $ sudo systemctl start rpcbind
@@ -118,6 +119,12 @@ $ sudo systemctl status nfs-server
 - Các quy trình RPC thông báo cho rpcbind khi chúng bắt đầu, đăng ký các cổng mà chúng đang nghe và số chương trình RPC mà chúng dự kiến ​​sẽ phục vụ. Hệ thống máy khách sau đó liên lạc với rpcbind trên máy chủ với số chương trình RPC cụ thể. Dịch vụ rpcbind chuyển hướng máy khách đến số cổng thích hợp để nó có thể giao tiếp với dịch vụ được yêu cầu
 
 Để kiểm tra điều này, tôi đã thiết lập máy chủ và máy khách NFS và theo dõi lưu lượng giữa chúng. Từ những gì tôi thấy, khách hàng đã biết rằng dịch vụ NFS trên máy chủ đang lắng nghe trên cổng 2049.
+
+## Kiểm tra port sử dụng bởi NFS
+```
+rpcinfo -p
+```
+![anhaa](https://image.prntscr.com/image/pqobYbC-RVSrBQc_umrHdg.png)
 
 Vì vậy, khi nào RCpbind đi vào chơi? Khi tôi làm rpcinfo trên máy chủ, tôi nhận được như sau:
 
@@ -140,6 +147,7 @@ Bây giờ chúng ta đang đi vào lãnh thổ kỳ lạ. "0.0.0.0.8.1" nằm t
  hãy khởi động lại dịch vụ NFS bằng cách sử dụng service nfs restart. Chạy rpcinfo -p lệnh để xác nhận các thay đổi.
 
 # Mở port cho phép truy cập 
+## Cấu hình Firewall để cho phép truy cập
 ```
 $ sudo firewall-cmd --permanent --add-service=rpc-bind
 success
@@ -155,6 +163,11 @@ success
 
 ![anh8](https://image.prntscr.com/image/rzKXaeRPRh6FsFAiidOdfw.png)
 
+## Kiểm tra mount point trên server
+```
+showmount -e localhost
+```
+![anhaaa](https://image.prntscr.com/image/MPlvOWihTkOXa1rrUT3a0Q.png)
 # Thiết lập NFS_Client
 Ta tạo 1 thư mục NFS và mount thư mục shared từ phía Server
 ```
