@@ -255,3 +255,4 @@ Lưu lại file /etc/fstab và chạy lệnh sau lưu các thay đổi và gắn
 Nếu có lỗi, không reboot server để tránh tình trạng server không thể khởi động. Kiểm tra cấu hình trong file /etc/fstab và chạy lại lệnh cho tới khi không có thông báo lỗi.
 
 ![anh25](https://image.prntscr.com/image/F8cL4qLLRCWdmP1Th_7AXg.png)
+
