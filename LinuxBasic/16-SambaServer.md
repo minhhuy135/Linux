@@ -22,6 +22,10 @@ nmbd : trình nền máy chủ hiểu và trả lời NetBIOS qua các yêu cầ
 
 winbindd : là dịch vụ phân giải thông tin người dùng và nhóm nhận được từ máy chủ chạy Windows. Điều này giúp cho người dùng Windows và thông tin các nhóm có thể hiểu được bởi các nền tảng Linux và UNIX. Nó cho phép người dùng Windows xuất hiện và hoạt động như người dùng Linux, UNIX trên máy Linux và UNIX.
 
+# Cách thức hoạt động sơ bộ của giao thức SMB
+Đối với giao thức SMB, nó hoạt động trong mạng Internet dựa trên giao thức TCP/IP. Và đem đến cho người dùng toàn quyền trong việc tạo một tập tin với các quyền hạn như Chỉ đọc (Read Only), Đọc và ghi (Read-Write), đặt mật khẩu, khóa một tập tin, …. Ngoài ra, SMB còn hỗ trợ các tính năng khác như:
+
+![anhaa](https://image.prntscr.com/image/C7a0IZqpRjKkYNcN52pHrg.png)
 # Samba Lab
 
 # Mô hình lab
