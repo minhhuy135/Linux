@@ -65,10 +65,11 @@ Tạo 1 thư mục
 ![anh15](https://image.prntscr.com/image/icJgncldSwGN2HHuXlnSRw.png)
 
 # 8.7. rmdir
-xóa 1 thư mục
+xóa 1 thư mục rỗng
 
 ![anh16](https://image.prntscr.com/image/umtmA1ghSZmK9kfF1TZUgA.png)
 
+rm -r <ten_thu_muc> : xóa thư mục chứa các thư mục con và tập tin có xác nhận từng đối tượng.
 # 9.4 touch
 ## 9.4.1 Tạo một tệp trống
 
@@ -84,17 +85,16 @@ xóa 1 thư mục
 
 ![anh3](https://image.prntscr.com/image/R5ct4PxfTAWQEhZChNkttg.png)
 
+rm <tap_tin_1> <tap_tin_2> ... : xóa nhiều tập tin
+
+rm /a/b/c/<tap_tin> : xóa tập tin theo đường dẫn
+
 ## 9.5.2. rm -i
 Để tránh việc vô tình xóa tệp, bạn có thể nhập rm -i
 
-## 9.5.3. rm -rf
+## 9.5.3. rm -f
 
-- Theo mặc định, rm -r sẽ không xóa các thư mục không trống. Tuy nhiên rm chấp nhận một số
-các tùy chọn sẽ cho phép bạn xóa bất kỳ thư mục nào. Câu lệnh rm -rf nổi tiếng vì
-nó sẽ xóa bất kỳ thứ gì (với điều kiện bạn có quyền làm như vậy). Khi bạn là
-đã đăng nhập với quyền root, hãy rất cẩn thận với rm -rf (f có nghĩa là lực và r có nghĩa là đệ quy)
-vì là root ngụ ý rằng các quyền không áp dụng cho bạn. Bạn có thể xóa
-tình cờ toàn bộ hệ thống tệp
+xóa không xác nhận
 ## 9.6. cp
 ## 9.6.1. copy one file
 
@@ -115,7 +115,11 @@ trong tất cả các thư mục con)
 
 ![anh5](https://image.prntscr.com/image/v_fstxzgTCueHQkL4uQqzg.png)
 
+- cp -i: Để ngăn cp ghi đè lên các tệp hiện có, hãy sử dụng tùy chọn -i (để tương tác).
 
+- cp -f : copy file ghi đè lên file đang tồn tại ở thư mục đích nếu nó cùng tên file nguồn copy.
+
+- cp -n: Copy không cho ghi đè file đang có.
 # 9.7. mv
 ## 9.7.1. đổi tên tệp bằng mv
 
@@ -132,6 +136,9 @@ Lệnh mv tương tự có thể được sử dụng để đổi tên các th�
 
 ![anh8](https://image.prntscr.com/image/fMdFeUttR-i5VHh_PDKjAw.png)
 
+- mv -i : Nhắc nhở nếu ghi đè
+
+- mv -f: Không nhắc nhở nếu có trường hợp ghi đè
 
 # 9.8.3. rename on CentOS/RHEL/Fedora
 Thay đổi tên tệp tên thư mục
