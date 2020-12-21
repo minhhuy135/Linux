@@ -1,0 +1,133 @@
+# Cách đặt IP trên Centos-7
+
+## Cách 1: Config Static IP sử dụng Network Manager
+
+
+Khi sử dụng lệnh nmcli
+(NetworkManager Command Line Interface) thì bản chất là cách dùng dòng lệnh để tạo ra file config cho các interface giống như các phiên bản CentOS trước kia. Điều này khá tiện lợi cho bạn khi thao tác thông qua CLI hoặc đưa và các bash shell sau này nếu có nhu cầu.
+
+# Hiển thị mạng sẵn có
+
+```
+# nmcli device
+```
+![anh1](https://image.prntscr.com/image/GByvcpW6RhG6sgxhisv5Xw.png)
+
+Lệnh này sẽ hiện thị ra toàn bộ các thiết bị mạng có sẵn trên hệ thống và trạng thái của chúng.
+
+Tại cột STATE sẽ có 2 kiểu :
+
+- managed: có nghĩa là thiết bị đó đặt dưới quyền kiểm soát của NetworkManager và thiết bị này có thể "connected" (Đã được config và active) hay disconnect (chưa được config những sẵn sàng để active trở lại)
+- unmanaged: thiết bị mạng này chưa được dưới quyền kiểm soát của NetworkManager.
+
+## Kiểm tra file config của card mạng ens33
+```
+# cat /etc/sysconfig/network-scripts/ifcfg-ens33
+```
+![anh2](https://image.prntscr.com/image/nB2wxONLQd_KewuSK7UK1A.png)
+
+Đặt IP cho Interface ens33
+Ta thấy ens33 đang nhận IP động, ta sẽ tiến hành đặt IP tĩnh. Ta sẽ đặt theo số liệu sau:
+
+- IP address: 192.168.64.11
+- Gateway: 192.168.64.1
+- Subnetmask: 255.255.255.0/24
+- DNS-nameserver: 8.8.8.8
+
+1. Đặt IP:
+```
+nmcli connection modify ens33 ipv4.addresses 192.168.64.11/24
+
+```
+-> "con" = "connection"(chế độ kết nối)
+
+   "mod" = "modify" (chế độ sửa đổi)
+
+2. Đặt Gateway:
+```
+nmcli connection modify ens33 ipv4.gateway 192.168.64.1
+```
+3. Đặt DNS:
+```
+nmcli con mod ens33 ipv4.dns 8.8.8.8
+
+```
+4. Chọn phương thức method: ở đây ta sẽ để manual có thể hiểu là cấu hình bằng tay:
+```
+nmcli con mod ens33 ipv4.method manual
+```
+5. Chọn kiểu kết nối tự động:
+```
+nmcli con mod ens33 connection.autoconnect yes
+```
+## Kiểm tra lại xem IP đã đặt chính xác chưa
+
+![anh3](https://image.prntscr.com/image/XvSB-G3sQUm36KDjZv6MlQ.png)
+
+Chú thích:
+– Dưới đây là các option bạn nên lưu ý khi cấu hình, còn lại để mặc định cũng được.
+
+- DEVICE : tên card mạng đã được liệt kê ở phần 1, nên điền chính xác tên card mạng thì hệ thống mới nhận biết được card nào để cấu hình card mạng cho nó.
+- NAME : nội dung y như phần DEVICE.
+- NBOOT : phải để option ‘yes‘ thì khi reboot hệ thống, network mới tự động được bật lên với cấu hình card mạng tương ứng.
+- BOOTPROTO : cấu hình IP tĩnh hay DHCP. Nếu là DHCP thì để giá trị ‘dhcp’.
+- IPV6INIT : tắt chức năng hỗ trợ sử dụng IPv6 trên card mạng ens18.
+- IPADDR : địa chỉ IP tĩnh.
+- PREFIX : subnet mask của lớp mạng IP sử dụng.
+- GATEWAY : địa chỉ IP cổng gateway.
+- DNS1 : thông tin DNS server.
+
+Ta sẽ cấu hình IP cho Interface ens37
+Ta thấy phần CONNECTION của ens37 nhìn khá dài. Nên ta đổi lại thành ens37 cho đồng bộ với ens33:
+```
+nmcli con modify "Wired connection 1" connection.id ens37
+```
+Ta được kết quả như hình:
+
+![anh4](https://image.prntscr.com/image/thUBNsKUTzaXY7QQPUeDXg.png)
+
+Bây giờ ta sẽ đặt IP cho ens37 như sau:
+
+IP address: 192.168.64.12/24
+Subnet Mask: 255.255.255.0/24
+
+Do ens3 đã có gateway để kết nối ra Internet nên ens7 không cần nữa.
+```
+nmcli con modify ens37 ipv4.addresses 192.168.64.12/24
+nmcli con modify ens37 ipv4.method manual
+nmcli con modify ens37 connection.autoconnect yes
+```
+Sau đó thực hiện lệnh ifdown và ifup để ens37 nhận IP vừa thiết lập. Có thể dùng cùng lúc 2 lệnh như sau:
+```
+[root@localhost ~]# ifdown ens37 && ifup ens37
+```
+![anh5](https://image.prntscr.com/image/oBZ4xLyFQzuPO04gDJFoEw.png)
+
+Kiểm tra file /etc/sysconfig/network-scripts/ifcfg-ens37 để xem lại thiết lập bằng lệnh cat:
+
+![anh6](https://image.prntscr.com/image/6Jbyae2dSTiLSaWnUAv7DQ.png)
+
+# Cách 2: Config IP sử dụng cách sửa file cấu hình
+
+Mỗi Network Interface(NI) đều có 1 file scrip cấu hình nằm bên trong folder /etc/sysconfig/network-scripts.
+
+Và file cấu hình của các NI đều có dạng ifcfg-<ten_interface>
+
+Ta sẽ thay đổi IP của ens37
+
+![anh7](https://image.prntscr.com/image/6Jbyae2dSTiLSaWnUAv7DQ.png)
+
+Một số dòng cấu hình cần quan tâm:
+
+1. BOOTPROTO 
+    - "none": khi chúng ta muốn sử dụng Static IP. 
+    - "dhcp": khi chúng ta muốn đặt IP động nhận từ DHCP server
+2. IPADDR - Địa chỉ IP
+3. PREFIX(khi đã set Static IP) - Xác định Network Prefix (ví dụ: /24)
+4. GATEWAY(khi đã set Static IP) - Xác định Default Gateway cho mạng
+5. DNS(khi đã set Static IP) - Ta có thể sử dụng tùy chọn này để xác định nhiều DNS Server (Bắt đầu từ 1)
+Mở file cấu hình bằng trình soạn thảo Vi để có thể đổi thông số của NI ens37:
+
+[root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens37
+
+Sau khi chỉnh sửa xong cấu hình ta chỉ cần ifdown và ifup NI của ens37 lên là được.
