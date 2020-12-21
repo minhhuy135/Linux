@@ -60,16 +60,52 @@ Bạn sẽ cần ít lần gõ phím hơn khi sử dụng phím tab và bạn s�
 các lệnh như tệp, chạm, rm, cp, mv và đổi tên.
 
 # 8.6. mkdir
-Tạo 1 thư mục
+Tạo thư mục đang đứng 
+```
+#mkdir hoctap hochanh thuchanh
+```
+![anha](https://image.prntscr.com/image/U3cqFqdSRJ6VAdN00meLjg.png)
 
-![anh15](https://image.prntscr.com/image/icJgncldSwGN2HHuXlnSRw.png)
+# 8.6.1 mkdir -v <ten_thu_muc>
+Tạo thư mục và hiển thị thông báo tạo thư mục.
+
+![anhb](https://image.prntscr.com/image/HfrUfmVPRMaUUZI8NI9Hpw.png)
+
+# 8.6.2 mkdir -p
+Tạo thư mục kèm thư mục cha
+
+![anhc](https://image.prntscr.com/image/qZzi9eQVRiWgnzKJeddRUg.png)
 
 # 8.7. rmdir
 xóa 1 thư mục rỗng
 
 ![anh16](https://image.prntscr.com/image/umtmA1ghSZmK9kfF1TZUgA.png)
 
-rm -r <ten_thu_muc> : xóa thư mục chứa các thư mục con và tập tin có xác nhận từng đối tượng.
+# 8.7. rmdir -p
+![anhaa](https://image.prntscr.com/image/neHDpJyVSOSUPi9Ex_AzrQ.png)
+# 8.7.1 rm -r 
+xóa thư mục chứa các thư mục con và tập tin có xác nhận từng đối tượng.
+
+![anhab](https://image.prntscr.com/image/qugU_LCRQzmMjFc3rOJkNA.png)
+
+ # 8.7.2 rm -rf
+xóa không xác nhận
+
+![anhaab](https://image.prntscr.com/image/olaqIjYqTLun4rR_FT0Buw.png)
+# 8.8.0 Lệnh file
+Lệnh file được sử dụng để xác định loại tệp.
+
+![ak](https://image.prntscr.com/image/tNqan3hFTemgIR70JbXxJA.png)
+
+# 8.8.1 file -b
+Hiển thị kiểu file 1 cách đơn giản, ngắn gọn.
+
+![an](https://image.prntscr.com/image/VYKlPTzGTpq_1JZh25HpCw.png)
+
+# 8.8.2 file *
+Hiển thị tất cả các loại file trong thư mục đang đứng:
+
+![abn](https://image.prntscr.com/image/ZeEXPVAcRCC39cRYaTRrYA.png)
 # 9.4 touch
 ## 9.4.1 Tạo một tệp trống
 
