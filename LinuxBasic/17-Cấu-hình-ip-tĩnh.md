@@ -131,3 +131,79 @@ Mở file cấu hình bằng trình soạn thảo Vi để có thể đổi thô
 [root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens37
 
 Sau khi chỉnh sửa xong cấu hình ta chỉ cần ifdown và ifup NI của ens37 lên là được.
+
+# Cách đặt IP trên ubutu 18.04
+
+
+Cấp địa chỉ IP bằng cách cấu hình netplan
+
+Kiểm tra các thiết bị đang có trong mạng:
+
+![anh1](https://image.prntscr.com/image/yArg17NuTNmOIPxhlEoAOA.png)
+
+Như vậy NIC ens38 đã tồn tại tuy nhiên nó chưa được cấp địa chỉ IP. Tiếp theo tôi sẽ cấu hình cho nó bằng cách vào thư mục `/etc/netplan/` và chỉnh sửa `file 50-cloud-init`.yaml. (Lưu ý khi bạn viết vào tệp *.yaml bạn phải tuân theo đúng cú pháp căn dòng của nó). Ở đây tôi muốn cấp IP động nên sẽ ghi vào nội dung file như sau:
+
+`#sudo vi /etc/netplan/50-cloud-init`
+
+```
+# This file is generated from information provided by
+# the datasource.  Changes to it will not persist across an instance.
+# To disable cloud-init's network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        ens33:
+            dhcp4: true
+        ens38:
+            dhcp4: true
+    version: 2
+```
+
+Trong trường hợp bạn muốn cấp IP tĩnh thì bạn có thể thiết lập các thông số như ví dụ dưới:
+```
+# This file is generated from information provided by
+# the datasource.  Changes to it will not persist across an instance.
+# To disable cloud-init's network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        ens33:
+            dhcp4: true
+        ens38:
+            addresses: [192.168.200.10/24]
+            nameservers:
+              addresses: [8.8.8.8]
+            dhcp4: no
+```
+Lưu ý: Bạn nên đặt địa chỉ IP tĩnh nằm ngoài range IP DHCP của local subnet.
+
+Tiếp theo bạn lưu thay đổi file và chạy lệnh netplan apply để thiết lập lại cấu hình.
+```
+netplan apply
+```
+Ta dùng lệnh ip a để kiểm tra kết quả:
+
+![anh2](https://image.prntscr.com/image/18NuEheFSaSuhbX-0UC1wA.png)
+
+# Cách đặt IP trên window
+Bước 1: Tìm địa chỉ Default Gateway để nắm bắt dải IP của mình.
+
+![anh3](https://image.prntscr.com/image/QM9qr3C6RievJ5Ek3nxKuA.png)
+
+Bước 2: Cũng tại  hộp thoại Run, gõ ncpa.cpl và Network Connection.
+
+![anh4](https://image.prntscr.com/image/2BGeK4LXSQiMhf7WpAVw_A.png)
+
+Nhấn chuột phải và chọn Properties.
+
+Tại đây bạn chọn Internet Protocol Vesion 4(TCP/IPv4) và chọn tiếp Properties.
+
+![anh5](https://image.prntscr.com/image/LbCnFulUTu2pqiV0kQ5z9A.png)
+
+Tiến hành nhập thông tin như hướng dẫn bên dưới. Số “15” trong dải wifi cung cấp là số bất kỳ và không được trùng lặp, nếu người khác nắm được thông tin này bạn sẽ không truy cập được mạng.
+
+Cuối cùng chọn OK để hoàn tất.
+
+![anh6](https://image.prntscr.com/image/wuaRFtAGRWCUwm60hSSHog.png)
