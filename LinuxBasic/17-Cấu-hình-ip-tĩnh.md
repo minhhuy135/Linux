@@ -168,14 +168,14 @@ Trong trường hợp bạn muốn cấp IP tĩnh thì bạn có thể thiết l
 # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
 # network: {config: disabled}
 network:
-    ethernets:
-        ens33:
-            dhcp4: true
+    ethernets:                (đây là version của dhcp)
+        ens33:            (tên giao diện mạng)
+            dhcp4: true      (là ip version 4)
         ens38:
-            addresses: [192.168.200.10/24]
-            gateway4: 192.168.200.2
-            nameservers:
-              addresses: [8.8.8.8]
+            addresses: [192.168.200.10/24] (địa chỉ ip và subnet mask)
+            gateway4: 192.168.200.2  (default geteway)
+            nameservers:   (tên máy chủ)
+              addresses: [8.8.8.8,8.8.4.4]   (DNS)
             dhcp4: no
 ```
 Lưu ý: Bạn nên đặt địa chỉ IP tĩnh nằm ngoài range IP DHCP của local subnet.
