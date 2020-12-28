@@ -92,6 +92,9 @@ xóa thư mục chứa các thư mục con và tập tin có xác nhận từng 
 xóa không xác nhận
 
 ![anhaab](https://image.prntscr.com/image/olaqIjYqTLun4rR_FT0Buw.png)
+
+# 8.7.4 rm -i
+nhắc nhở trước mỗi lần xoá 
 # 8.8.0 Lệnh file
 Lệnh file được sử dụng để xác định loại tệp.
 
