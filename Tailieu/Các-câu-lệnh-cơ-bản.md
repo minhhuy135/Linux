@@ -66,12 +66,12 @@ Tạo thư mục đang đứng
 ```
 ![anha](https://image.prntscr.com/image/U3cqFqdSRJ6VAdN00meLjg.png)
 
-# 8.6.1 mkdir -v <ten_thu_muc>
+# 8.6.1 mkdir -v(verbose) <ten_thu_muc>
 Tạo thư mục và hiển thị thông báo tạo thư mục.
 
 ![anhb](https://image.prntscr.com/image/HfrUfmVPRMaUUZI8NI9Hpw.png)
 
-# 8.6.2 mkdir -p
+# 8.6.2 mkdir -p(parents)
 Tạo thư mục kèm thư mục cha
 
 ![anhc](https://image.prntscr.com/image/qZzi9eQVRiWgnzKJeddRUg.png)
@@ -88,13 +88,21 @@ xóa thư mục chứa các thư mục con và tập tin có xác nhận từng 
 
 ![anhab](https://image.prntscr.com/image/qugU_LCRQzmMjFc3rOJkNA.png)
 
- # 8.7.2 rm -rf
+ # 8.7.2 rm -rf (force)
 xóa không xác nhận
 
 ![anhaab](https://image.prntscr.com/image/olaqIjYqTLun4rR_FT0Buw.png)
 
 # 8.7.4 rm -i
 nhắc nhở trước mỗi lần xoá 
+
+# 8.7.4 rm -rd(dir) xoá bỏ các thư mục trống
+
+# 8.7.5 rm -rv(verbose)
+giải thích những gì đang được thực hiện
+
+![anhop](https://image.prntscr.com/image/2-Njo4UAR__kONrErCP8pw.png)
+
 # 8.8.0 Lệnh file
 Lệnh file được sử dụng để xác định loại tệp.
 
@@ -109,7 +117,19 @@ Hiển thị kiểu file 1 cách đơn giản, ngắn gọn.
 Hiển thị tất cả các loại file trong thư mục đang đứng:
 
 ![abn](https://image.prntscr.com/image/ZeEXPVAcRCC39cRYaTRrYA.png)
+
+# 8.8.2 file -s
+Hiển thị các loại tệp của tệp đặc biệt như các tệp trong /dev/ và /proc/
+
+![ans](https://image.prntscr.com/image/JBvJoVaJSyqU6TbRcHT32Q.png)
+
+
 # 9.4 touch
+Dấu thời gian của file có loại:
+- accesstime (
+thời gian truy cập)
+- modifytime (thời gian sửa đổi)
+- changetime (thay đổi thời gian)
 ## 9.4.1 Tạo một tệp trống
 
 ![anh1](https://image.prntscr.com/image/lf-j9UK2TJez_Z5muzhqCA.png)
@@ -119,7 +139,18 @@ Hiển thị tất cả các loại file trong thư mục đang đứng:
 
 ![anh2](https://image.prntscr.com/image/WjxZFQpES0eDc_xrUtAMgg.png)
 
-## 9.5 rm
+## 9.4.3. Thay đổi dấu thời gian
+### touch -a <filename> :Thay đổi thời gian truy cập (acesstime) của file.
+
+![anhs](https://image.prntscr.com/image/48pHUNQ_SnCWviMuPzYLpg.png)
+
+`touch -m <filename>: Thay đổi thời gian sửa đổi (modifytime)`
+
+# 9.4.4 touch -t YYYYMMDDHHMM <filename>
+
+![anhhh](https://image.prntscr.com/image/lmn_t_u1TSmHQdCrCm5PJA.png)
+
+## Xóa tệp 9.5 rm
 - Xóa vĩnh viễn 
 
 ![anh3](https://image.prntscr.com/image/R5ct4PxfTAWQEhZChNkttg.png)
