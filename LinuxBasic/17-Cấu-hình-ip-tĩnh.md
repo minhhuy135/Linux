@@ -173,6 +173,7 @@ network:
             dhcp4: true
         ens38:
             addresses: [192.168.200.10/24]
+            gateway4: 192.168.10.2
             nameservers:
               addresses: [8.8.8.8]
             dhcp4: no
@@ -186,6 +187,46 @@ netplan apply
 Ta dùng lệnh ip a để kiểm tra kết quả:
 
 ![anh2](https://image.prntscr.com/image/18NuEheFSaSuhbX-0UC1wA.png)
+
+# Cách đặt IP trên(ubutu 16.04)
+Giả sử card mạng của máy cần cấu hình là eth0, chúng ta sẽ cấu hình từng trường hợp như sau:
+
+Để thay đổi cấu hình địa chỉ IP, ta cần truy cập vào “/etc/network/interfaces” với câu lệnh sau:
+
+```
+sudo /etc/network/interfaces
+```
+1. Cấu hình địa chỉ IP động:
+
+Sau khi truy cập vào interfaces bạn chỉnh sửa ở mục eth0 thành:
+```
+auto eth0
+iface eth0 inet dhcp
+```
+![anh7](https://image.prntscr.com/image/ghaZtufbRrSjkQEwoRMHLA.png)
+
+2. Cấu hình địa chỉ IP tĩnh:
+```
+auto eth0
+iface eth0 inet static
+address 192.168.0.100
+netmask 255.255.255.0
+gateway 192.168.0.1
+```
+![anh8](https://image.prntscr.com/image/zWe2AzrqQJe9fxdP1NaJTQ.png)
+
+cấu hình dns
+
+![anh9](https://image.prntscr.com/image/aD4sZHuWQEem3jiKh0HOpw.png)
+
+
+
+
+
+
+
+
+
 
 # Cách đặt IP trên window
 Bước 1: Tìm địa chỉ Default Gateway để nắm bắt dải IP của mình.
