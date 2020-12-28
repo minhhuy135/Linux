@@ -173,7 +173,7 @@ network:
             dhcp4: true
         ens38:
             addresses: [192.168.200.10/24]
-            gateway4: 192.168.10.2
+            gateway4: 192.168.200.2
             nameservers:
               addresses: [8.8.8.8]
             dhcp4: no
