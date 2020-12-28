@@ -68,7 +68,7 @@ Chú thích:
 – Dưới đây là các option bạn nên lưu ý khi cấu hình, còn lại để mặc định cũng được.
 
 - DEVICE : tên card mạng đã được liệt kê ở phần 1, nên điền chính xác tên card mạng thì hệ thống mới nhận biết được card nào để cấu hình card mạng cho nó.
-- NAME : nội dung y như phần DEVICE.
+- NAME : tên của cạc mạng .
 - NBOOT : phải để option ‘yes‘ thì khi reboot hệ thống, network mới tự động được bật lên với cấu hình card mạng tương ứng.
 - BOOTPROTO : cấu hình IP tĩnh hay DHCP. Nếu là DHCP thì để giá trị ‘dhcp’.
 - IPV6INIT : tắt chức năng hỗ trợ sử dụng IPv6 trên card mạng ens18.
@@ -209,9 +209,9 @@ iface eth0 inet dhcp
 ```
 auto eth0
 iface eth0 inet static
-address 192.168.0.100
+address 192.168.159.140
 netmask 255.255.255.0
-gateway 192.168.0.1
+gateway 192.168.159.1
 ```
 ![anh8](https://image.prntscr.com/image/zWe2AzrqQJe9fxdP1NaJTQ.png)
 
