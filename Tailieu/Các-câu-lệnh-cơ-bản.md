@@ -165,31 +165,76 @@ rm /a/b/c/<tap_tin> : xóa tập tin theo đường dẫn
 ## 9.5.3. rm -f
 
 xóa không xác nhận
-## 9.6. cp
+## 9.6. cp (sao chép và thư mục)
 ## 9.6.1. copy one file
 
 Để sao chép một tệp, hãy sử dụng cp với một đối số nguồn và đích.
 
 ![anh4](https://image.prntscr.com/image/E5NV6TAuRpKqvAw2FKeJhg.png)
 
-## 9.6.3. cp -r
+## 9.6.3. Copy File vào thư mục 
+```
+# cp <filename_1> <filename_2> ... <filename_n> <thư_mục_đích>
+```
+![anh5](https://image.prntscr.com/image/ntmL9XtLRYm2a09xAcGMvA.png)
 
-Để sao chép các thư mục hoàn chỉnh, hãy sử dụng cp -r (tùy chọn -r buộc sao chép đệ quy tất cả các tệp
-trong tất cả các thư mục con)
+## 9.6.4 Copy 1 Thư mục vào 1 Thư mục khác.
+r - recursive : đệ quy
+```
+cp -r/-R <thư_mục_muốn_cop> <thư_mục_đích>
+```
+![anh6](https://image.prntscr.com/image/ZvLGRXKYTHyMkpE7kCGkuQ.png)
 
-![anh2](https://image.prntscr.com/image/0r0nnMbuQNulS69R5zIaCA.png)
+copy thư mục học tập file bên trong thư mục học tập sang , thư mục ngoại khóa
 
-## 9.6.5. cp -i
 
-Để ngăn cp ghi đè lên các tệp hiện có, hãy sử dụng tùy chọn -i (để tương tác).
+## 9.6.5 cp -i
+i - interactive : tương tác
 
-![anh5](https://image.prntscr.com/image/v_fstxzgTCueHQkL4uQqzg.png)
+Hỏi lại người dùng có muốn ghi đè không khi có tệp trùng tên. Hoặc ghi đè nội dung của file đích.
 
-- cp -i: Để ngăn cp ghi đè lên các tệp hiện có, hãy sử dụng tùy chọn -i (để tương tác).
+![anh7](https://image.prntscr.com/image/Sj3Rg8xmRoGT9d_7oc6Jvg.png)
 
-- cp -f : copy file ghi đè lên file đang tồn tại ở thư mục đích nếu nó cùng tên file nguồn copy.
+khi dùng câu lệnh cp -i như hình ta thấy các nội dung ở trong file danchoi.txt đã được chuyển sang file ducati.txt
 
-- cp -n: Copy không cho ghi đè file đang có.
+## 9.6.6 cp -b
+b - backup : sao lưu
+Tạo bản sao lưu của tệp đích trong cùng thư mục với tệp khác và ở 1 định dạng khác.
+
+![anh8](https://image.prntscr.com/image/L6Wc36mLTpKDYepbvgYtvQ.png)
+
+khi dùng câu lệnh cp -b ta thấy đã tạo ra 1 file danthuong.txt~ file này chứa nội dung gốc , còn file danthuong.txt chứa nội dung của file danchoi.txt
+
+## 9.6.7 cp -p
+p - preserve : bảo quản
+Khi sử dụng -p, lệnh cp sẽ bảo toàn các đặc điểm sau của tệp nguồn: timestamp, quyền sở hữu
+
+![anh9](https://image.prntscr.com/image/62PYVtUjTMC8lVHLv7DQtg.png)
+
+ta thấy khi sử dụng cp -p thì quyề sở hữu vẫn được dữ nguyên và ngày giờ cũng được giữ nguyên theo file xedap.txt
+
+## 9.6.8 cp -n
+n - no clobber
+
+Không ghi đè lên tệp hiện có.
+
+![anh10](https://image.prntscr.com/image/3j5lhk_qStWhZQPsxuM51w.png)
+
+
+
+## 9.6.9 cp -v
+-v - verbose : Xem quá trình
+
+
+![anh11](https://image.prntscr.com/image/RzyZlCZsRLud3qOu8r3NOg.png)
+
+
+
+
+
+
+
+
 # 9.7. mv
 ## 9.7.1. đổi tên tệp bằng mv
 
