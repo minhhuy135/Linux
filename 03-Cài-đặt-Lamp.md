@@ -44,6 +44,18 @@ Bạn cũng có thể kiểm tra trạng thái trên trình duyệt bằng cách
 
 ![anh4](https://image.prntscr.com/image/Dd1kj51ZTguA0NCYdIkoqQ.png)
 
+ Kế tiếp, bạn cần mở dịch vụ http (mở port) trên Firewall đang được kích hoạt trên server (mặc định, tường lửa Firewalld được sử dụng trên CentOS 7) bằng những lệnh sau:
+```
+# firewall-cmd --permanent --add-service=http 
+# firewall-cmd --permanent --add-service=https
+# systemctl restart firewalld
+```
+Bạn có thể kiểm tra lại kết quả mở port 80, 443 trên Firewalld bằng lệnh:
+```
+#firewall-cmd --list-all
+```
+![anh4g](https://image.prntscr.com/image/PSoaL2FcRAOxOK5u_4UNVQ.png)
+
 Nếu bạn sử dụng hệ điều hành trên máy ảo, bạn có thể tắt firewall để có thể truy cập trên browser của máy thực:
 ```
 systemctl stop firewalld 
