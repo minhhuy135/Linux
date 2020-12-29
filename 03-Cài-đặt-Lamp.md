@@ -92,3 +92,57 @@ Sau khi thiết lập xong, kích hoạt mariadb để khởi động cùng hệ
 ```
 systemctl enable mariadb
 ```
+2.3. Cài đặt php
+Phiên bản có sẵn trong repo của CentOS đang là 5.4. Phiên bản này khá cũ và sẽ khiến bạn gặp một số vấn đề xảy ra khi tiến hành cài đặt wordpress. Vì vậy bạn cần phải cài đặt phiên bản 7x để khắc phục. Bạn cần tiến hành thêm kho vào Remi CentOS:
+
+Cài đặt Remi
+```
+# yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+```
+Cài yum-utils vì chúng ta cần tiện ích yum-config-manager để cài đặt:
+```
+yum -y install yum-utils
+```
+Tiến hành cài đặt php. Ở đây ta cần lưu ý về phiên bản cài đặt như sau:
+
+- Bản 7.0:
+```
+yum-config-manager --enable remi-php70
+yum -y install php php-opcache php-mysql
+```
+- Bản 7.1:
+```
+yum-config-manager --enable remi-php71
+yum -y install php php-opcache php-mysql
+```
+- Bản 7.2:
+```
+yum-config-manager --enable remi-php72
+yum -y install php php-opcache php-mysql
+```
+- Bản 7.3:
+```
+yum-config-manager --enable remi-php73
+yum -y install php php-opcache php-mysql
+```
+Trong bài này, mình cài phiên bản 7.0
+
+Sau khi cài đặt xong, thực hiện restart lại apache:
+```
+systemctl restart httpd
+```
+Tiến hành kiểm tra kết quả. Ta thêm file sau:
+```
+echo "<?php phpinfo();?>" > /var/www/html/info.php
+```
+Sau đó restart lại apache:
+```
+systemctl restart httpd
+```
+Vào trình duyệt, gõ trên thanh url địa chỉ sau:
+
+`<địa chỉ ip>/info.php`
+
+Khi màn hình này xuất hiện, bạn đã thực hiện thành công!
+
+![anh7](https://image.prntscr.com/image/4juOQA5GRDaOwvQqC0_cJA.png)
