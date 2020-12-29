@@ -97,7 +97,8 @@ Phiên bản có sẵn trong repo của CentOS đang là 5.4. Phiên bản này 
 
 Cài đặt Remi
 ```
-# yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+# yum install epel-release yum-utils -y
+# yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 ```
 Cài yum-utils vì chúng ta cần tiện ích yum-config-manager để cài đặt:
 ```
@@ -125,7 +126,7 @@ yum -y install php php-opcache php-mysql
 yum-config-manager --enable remi-php73
 yum -y install php php-opcache php-mysql
 ```
-Trong bài này, mình cài phiên bản 7.0
+Trong bài này, mình cài phiên bản 7.2
 
 Sau khi cài đặt xong, thực hiện restart lại apache:
 ```
@@ -145,4 +146,4 @@ Vào trình duyệt, gõ trên thanh url địa chỉ sau:
 
 Khi màn hình này xuất hiện, bạn đã thực hiện thành công!
 
-![anh7](https://image.prntscr.com/image/4juOQA5GRDaOwvQqC0_cJA.png)
+![anh7](https://image.prntscr.com/image/txyehv55RqWb_Kai-bvSdQ.png)
