@@ -44,7 +44,29 @@ Bạn cũng có thể kiểm tra trạng thái trên trình duyệt bằng cách
 
 ![anh4](https://image.prntscr.com/image/Dd1kj51ZTguA0NCYdIkoqQ.png)
 
+ # 3 Mở cổng (port) trên CentOS 7/8
+Tưởng lửa trên CentOS 7/8 giờ được quản lý bằng công cụ firewall-cmd, nên để mở port sử dụng command sau với quyền của tài khoản root.
+
+– Kiểm tra zone nào của tường lửa đang được active
+```
+firewall-cmd --get-active-zones
+```
+![anhcv](https://image.prntscr.com/image/tCgxl48QRlGZBwkr6MI3Fw.png)
+
+– Mở cổng (VD: 80) trên zone đang active (Public Zone)
+```
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+```
+
+– Sau đó để luật mới có hiệu lực cần reload lại tường lửa bằng command sau:
+```
+firewall-cmd --reload
+```
+![kk](https://image.prntscr.com/image/IxFqDO29SDScbsbN_46yuA.png)
+
+
  Kế tiếp, bạn cần mở dịch vụ http (mở port) trên Firewall đang được kích hoạt trên server (mặc định, tường lửa Firewalld được sử dụng trên CentOS 7) bằng những lệnh sau:
+
 ```
 # firewall-cmd --permanent --add-service=http 
 # firewall-cmd --permanent --add-service=https
