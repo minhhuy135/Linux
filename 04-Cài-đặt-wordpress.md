@@ -18,7 +18,30 @@ Trước khi tiến hành cài đặt WordPress, bạn phải cài đặt bộ L
 ```
 mysql -u root -p
 ```
-Bước 3: Tải và cài đặt WordPress
+Bạn cần nhập password mà bạn đã thiết lập lúc cài đặt mariadb. Khi nhập xong, terminal sẽ chuyển sang mariadb.
+
+Tiếp theo bạn sẽ tạo cơ sở dữ liệu cho wordpress. Bạn có thể sử dụng một cái tên bất kì. Trong bài, mình sẽ đặt tên là wordpress.
+```
+CREATE DATABASE wordpress;
+```
+Bạn cần tạo một tài khoản riêng để quản lí cơ sở dữ liệu cho WordPress. Trong bài mình sẽ đặt tên cho tài khoản là user và mật khẩu là pass, như sau:
+```
+CREATE USER user@localhost IDENTIFIED BY 'pass';
+```
+Tiến hành cấp quyền quản lí cơ sở dữ liệu wordpress cho user mới tạo.
+```
+# GRANT ALL PRIVILEGES ON wordpress.* TO user@localhost IDENTIFIED BY 'pass';
+```
+Sau đó xác thực lại những thay đổi về quyền:
+```
+FLUSH PRIVILEGES;
+```
+Sau khi hoàn tất, thoát khỏi mariadb:
+```
+exit
+```
+
+# Bước 3: Tải và cài đặt WordPress
 Trước khi bắt đầu tiến hành cài gói hỗ trợ php-gd:
 ```
 yum -y install php-gd
