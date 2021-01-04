@@ -76,7 +76,7 @@ Bạn có thể kiểm tra lại kết quả mở port 80, 443 trên Firewalld b
 ```
 #firewall-cmd --list-all
 ```
-![anh4g](https://image.prntscr.com/image/PSoaL2FcRAOxOK5u_4UNVQ.png)
+![anh4g](https://image.prntscr.com/image/oZCnGHPrTMeHVSg639p9Lg.png)
 
 Nếu bạn sử dụng hệ điều hành trên máy ảo, bạn có thể tắt firewall để có thể truy cập trên browser của máy thực:
 ```
