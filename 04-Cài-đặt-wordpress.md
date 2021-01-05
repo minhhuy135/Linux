@@ -102,3 +102,23 @@ Bạn cần tiến hành phân quyền thư mục wordpress cho user apache đ�
 #chmod -R 755 /var/www/html/*
 ```
 Như vậy là bạn đã có thể tiến hành upload ảnh và đăng bài viết lên trang wordpress của bạn.
+
+# II. Tăng dung lượng file upload trong WordPress
+
+Sửa file php.ini
+
+Ta kiểm tra file php.ini gốc ở đâu
+
+![anh4](https://image.prntscr.com/image/JLRfnDCoQxmnqD73auv44Q.png) 
+
+khi ta đã biết đường dẫn ta vào file /etc/php.ini
+
+![anh5](https://image.prntscr.com/image/GbTlO3fPR_GrazraW-Cndg.png)
+
+*note
+``` 
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time = 300
+```
+![anh6](https://image.prntscr.com/image/NB-ECuunTyCnAektO3WWxQ.png)
