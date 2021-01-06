@@ -67,3 +67,58 @@ Kết nối thành công, 1 kết nối nhanh được tạo trên giao diện h
 Đây là giao diện sau khi bạn click vào kết nối ở home và cũng là nơi chúng ta trực tiếp sử dụng để quản trị database
 
 ![anh8](https://image.prntscr.com/image/IjU8pCAcSWK4PB0MdnookQ.png)
+
+ `*note: khi ta tắt máy hoặc reboot sẽ xảy ra lỗi ''Không thể kết nối với máy chủ MySQL cục bộ thông qua socket '/var/lib/mysql/mysql.sock' (2) '' Khi đó ta `
+
+ Vì vậy, trước tiên bạn nên bắt đầu,
+```
+$ sudo systemctl start mariadb
+```
+Cho phép dịch vụ tự động chạy khi khởi động(chạy cùng hệ thống)
+```
+systemctl enable mariadb
+```
+Sau đó, để bắt đầu mysql,
+```
+$ mysql -u root -p
+```
+# II. Database
+
+Đăng nhập vào user root của MariaDB
+
+```
+mysql -u root -p
+```
+Tạo database
+```
+create database [database_name];
+```
+VD :Tạo database có tên test
+
+![ANH9](https://image.prntscr.com/image/DaykWl7LR5mFHMhKyW2nrg.png)
+
+- Tạo mới user :huydm có pass: Huy@1234
+```
+> create user 'huydm'@'192.168.159.139' indentified by 'Huy@1234';
+```
+
+- Gán quyền cho user : 
+ 
+```
+ >grant all on mydatabase.* to 'huydm' identified by 'Huy@1234';
+```
+- reload mysql
+```
+>flush privileges;
+```
+![anh10](https://image.prntscr.com/image/WF8M-wGkTnKUCWTlM9IfTA.png)
+
+chú thích :
+
+
+ - ```*.* : tất cả datasbast và bảng```
+
+- % :cho phép truy cập từ xa tất cả các điểm
+
+- @ : tất cả các địa chỉ ip
+`
