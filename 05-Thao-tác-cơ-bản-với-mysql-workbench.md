@@ -22,8 +22,6 @@ firewall-cmd --reload
 
 Kế tiếp, bạn cần mở dịch vụ http (mở port) trên Firewall đang được kích hoạt trên server (mặc định, tường lửa Firewalld được sử dụng trên CentOS 7) bằng những lệnh sau:
 ```
-# firewall-cmd --permanent --add-service=http 
-# firewall-cmd --permanent --add-service=https
 # systemctl restart firewalld
 ```
 Bạn có thể kiểm tra lại kết quả mở port 3306 trên Firewalld bằng lệnh:
@@ -40,11 +38,12 @@ Bạn có thể kiểm tra lại kết quả mở port 3306 trên Firewalld bằ
  ```
  `create user 'huydm'@'%' identified by '12345'; --> tạo user demo` user là huydm mk là 12345
 
-`grant all on *.* to 'demo'@'%'; --> cấp quyền cho user demo trên tất cả database`
+`grant all on *.* to 'huydm'@'%'; --> cấp quyền cho user huydm trên tất cả database`
 
+(*.* là tất cả các database và tất cả các bảng 
 ![anh4](https://image.prntscr.com/image/GJx9jnwiS1SQXeR2T3gOqQ.png)
 
-- Chỉnh sửa bind-address trong file /etc/my.cnf.d/server.cnf cho phép người dùng trên MySQL Workbench kết nối vào Database trên tất cả các cổng
+- Chỉnh sửa bind-address trong file /etc/my.cnf.d/server.cnf cho phép người dùng trên MySQL Workbench kết nối vào Database trên tất cả các cổng (0.0.0.0 đại diện cho tất cả các ip và tất cả các máy kết nối vào database)
 ```
 [mariadb] 
 bind-address=0.0.0.0
