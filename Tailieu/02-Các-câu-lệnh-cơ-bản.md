@@ -282,6 +282,7 @@ no clobber : với option này sẽ ngăn không cho ghi đè 1 tệp hiện có
 
 5. mv -b
 b -backup : tạo 1 bản lưu trữ tệp tin sẽ bị ghi đè
+
 ![anh12](https://image.prntscr.com/image/1MeezGBDTkKIXOrC70oq1w.png)
 
 # 9.7.3 Lệnh rename
@@ -289,3 +290,49 @@ Thường được dùng để đổi tên file được đặt tên theo biếu
 ```
 # rename [options] 
 ```
+Đổi đuôi tệp:
+
+![anh13](https://image.prntscr.com/image/9L-a1v4KTmWcrkmb5yrgYw.png)
+
+Đổi chữ HOA/thường:
+
+![anh14](https://image.prntscr.com/image/DmnlsZRwTFGfCRtTl8ndFw.png)
+
+2. rename -v
+
+v- verbose: hiển thị quá trình
+
+![anh15](https://image.prntscr.com/image/yu3B2t0JR_qc0Wjl3KqFwg.png)
+
+ # 9.7.4 Lệnh head
+
+ Dùng để in phần đầu của tệp tin.
+
+Ta sẽ sử dụng file list.txt chứa 30 dòng số từ 1 đến 30 để ví dụ lệnh head.
+
+1. head <filename>
+Mặc định in ra 10 dòng đầu tiên của tệp đó.
+
+![anh16](https://image.prntscr.com/image/aItrDaYbSrGDl3a9aybAkg.png)
+
+Có thể dùng 1 lúc cho nhiều file.
+
+![anh17](https://image.prntscr.com/image/eg0_tOCYQcCQrm6QW_hIsQ.png)
+
+2. head -n (number)
+
+n - number : In ra số dòng đầu tiên xác định. Nếu không có giá trị xác định sẽ xảy ra lỗi.
+
+![ANH18](https://image.prntscr.com/image/9m58Vtu8THaEHtr8Lhpchw.png)
+
+3. head -q
+
+q - quiet --silent : yên tĩnh Nó sẽ in ra các dòng đầu tiên của tệp nhưng không có tên tệp khi có nhiều file.
+
+![anh19](https://image.prntscr.com/image/IfzFZCtbTea3QQOSmPEg1A.png)
+
+4. head -v
+
+v - verbose : luôn in ra kèm tên của file
+
+![anh20](https://image.prntscr.com/image/y6yrDjzAQDW5hRigUccK4w.png)
