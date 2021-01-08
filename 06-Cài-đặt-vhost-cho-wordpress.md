@@ -226,8 +226,11 @@ Tiến hành thay đổi thông tin cơ sở dũ liệu, tài khoản, mật kh�
 
 `Gõ ESC -> :wq để lưu và thoát khỏi chế độ chỉnh sửa.`
 
+
 Bước 5: Hoàn tất phần cài đặt giao diện
 Trên trình duyệt, gõ địa chỉ ip server trên thành url, trình duyệt sẽ xuất hiện như sau:
+
+![anh15](https://image.prntscr.com/image/Ous1IPByQPqc9UYSF-saTg.png)
 
 Bạn cần tiến hành phân quyền thư mục wordpress cho user apache để cho user này được phép tạo các thư mục và lưu các tệp tải lên. Trên của sổ terminal, ta gõ lệnh như sau:
 ```
