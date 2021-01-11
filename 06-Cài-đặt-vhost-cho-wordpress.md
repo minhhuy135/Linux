@@ -18,7 +18,7 @@ Tạo ra file index.html đơn giản cho 1 website để kiểm thử hoạt đ
 ```
 # touch /var/www/zaraoder/index.html
 
-# echo "<center><h1>This is website huydm.local</h1></center>" > /var/www/zaraoder/index.html
+# echo "<center><h1>This is website zaraoder.xyz</h1></center>" > /var/www/zaraoder/index.html
 ```
 Tạo 2 thư mục lưu trữ File cấu hình Virtual host cho apache:
 ```
@@ -131,7 +131,7 @@ Khi hệ thống khởi động, hãy xác minh thay đổi bằng lệnh: sesta
 
 Kiểm tra hoạt động
 
-Trên trình duyệt web của User, bạn vào huydm.local để kiểm tra 
+Trên trình duyệt web của User, bạn vào zaraoder.xyz để kiểm tra 
 
 Nếu ra nội dung như ta setup ban đầu thì đã thành công.
 
@@ -163,7 +163,7 @@ CREATE USER huydm@localhost IDENTIFIED BY 'Huy@1234';
 ```
 Tiến hành cấp quyền quản lí cơ sở dữ liệu wordpress cho user mới tạo.
 ```
- GRANT ALL PRIVILEGES ON wordpress.* TO user@localhost IDENTIFIED BY 'pass';
+ GRANT ALL PRIVILEGES ON wordpress.* TO huydm@localhost IDENTIFIED BY 'Huy@1234';
  ```
 
 Sau đó xác thực lại những thay đổi về quyền:
