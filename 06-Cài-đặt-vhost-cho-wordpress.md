@@ -8,7 +8,7 @@ Khi ta cấu hình LAMP Song
 - Tạo Folder chứa code cho 1 website huydm.local(với tuỳ chọn-p cho phép ta tạo ra những thư mục con lồng trong nó)
 
 ```
-sudo mkdir -p /var/www/huydm
+sudo mkdir -p /var/www/zaraoder
 ```
 Chỉnh sửa quyền truy cập sao cho quyền đọc được chấp nhận với tất cả các file và thư mục bên trong /var/www
 ```
@@ -16,9 +16,9 @@ sudo chmod -R 755 /var/www
 ```
 Tạo ra file index.html đơn giản cho 1 website để kiểm thử hoạt động của Virtual host.
 ```
-# touch /var/www/web1/index.html
+# touch /var/www/zaraoder/index.html
 
-# echo "<center><h1>This is website huydm.local</h1></center>" > /var/www/huydm/index.html
+# echo "<center><h1>This is website huydm.local</h1></center>" > /var/www/zaraoder/index.html
 ```
 Tạo 2 thư mục lưu trữ File cấu hình Virtual host cho apache:
 ```
@@ -43,20 +43,20 @@ IncludeOptional sites-enabled/*.conf
 
 Lưu lại và thoát.
 
-Tạo File Virtual host cho huydm.local :
+Tạo File Virtual host cho zaraoder.xyz :
 ```
-vi /etc/httpd/sites-available/huydm.local.conf
+vi /etc/httpd/sites-available/zaraoder.xyz.conf
 ```
 Thêm nội dung sau vào file:
 ```
 <VirtualHost *:80>
-       ServerAdmin admin@huydm.local
-       ServerName huydm.local
-       ServerAlias www.huydm.local
-       DocumentRoot /var/www/huydm
+       ServerAdmin admin@zaraoder.xyz
+       ServerName zaraoder.xyz
+       ServerAlias www.zaraoder.xyz
+       DocumentRoot /var/www/zaraoder
        DirectoryIndex index.php index.html
-       ErrorLog /var/www/huydm/error.log
-       CustomLog /var/www/huydm/requests.log combined
+       ErrorLog /var/www/zaraoder/error.log
+       CustomLog /var/www/zaraoder/requests.log combined
 </VirtualHost>
 
 ```
@@ -82,7 +82,7 @@ Kích hoạt Virtual host
 
 Như đã để cập ở trên, Apache sẽ chỉ nhận những cấu hình Virtual host trong thư mục sites-enabled. vì vậy ta sẽ tạo một liên kết ( symbolic link) vào thư mục sites-enabled  của mỗi virtual host:
 ```
-sudo ln -s /etc/httpd/sites-available/huydm.local.conf /etc/httpd/sites-enabled/huydm.local.conf
+sudo ln -s /etc/httpd/sites-available/zaraoder.xyz.conf /etc/httpd/sites-enabled/zaraoder.xyz.conf
 ```
 Restart Apache để lưu thay đổi.
 ```
@@ -159,7 +159,7 @@ CREATE DATABASE wordpress;
 
 Bạn cần tạo một tài khoản riêng để quản lí cơ sở dữ liệu cho WordPress. Trong bài mình sẽ đặt tên cho tài khoản là user và mật khẩu là pass, như sau:
 ```
-CREATE USER user@localhost IDENTIFIED BY 'pass';
+CREATE USER huydm@localhost IDENTIFIED BY 'Huy@1234';
 ```
 Tiến hành cấp quyền quản lí cơ sở dữ liệu wordpress cho user mới tạo.
 ```
@@ -198,24 +198,26 @@ tar xvfz latest.tar.gz
 
 Lưu ý: giải nén sẽ ra thư mục wordpress có đường dẫn /root/wordpress.
 
-Copy các file trong thư mục WordPress tới đường dẫn /var/www/huydm như sau:
+Copy các file trong thư mục WordPress tới đường dẫn /var/www/zaraoder như sau:
 ```
-cp -Rvf /root/wordpress/* /var/www/huydm
+cp -Rvf /root/wordpress/* /var/www/zaraoder
 ```
 Bước 4: Cấu hình WordPress
 
 Ta di chuyển đường dẫn tới thư mục chứa các file cài đặt WordPress như sau:
 ```
-cd /var/www/huydm
+cd /var/www/zaraoder
 ```
 File cấu hình wordpress là wp-config.php. Tuy nhiên tại đây chỉ có file wp-config-sample.php. Tiến hành copy lại file cấu hình như sau:
 ```
 cp wp-config-sample.php wp-config.php
 ```
 Mở file config với vi để sửa:
+
 ```
 vi wp-config.php
 ```
+
 Trong file này, ta tìm tới dòng như hình dưới đây.
 
 ![anh2](https://image.prntscr.com/image/4Dk_xVFPRcKGOYHuhIF1MA.png)
@@ -234,9 +236,9 @@ Trên trình duyệt, gõ địa chỉ ip server trên thành url, trình duyệ
 
 Bạn cần tiến hành phân quyền thư mục wordpress cho user apache để cho user này được phép tạo các thư mục và lưu các tệp tải lên. Trên của sổ terminal, ta gõ lệnh như sau:
 ```
-#chown -R apache:apache /var/www/html/*
+#chown -R apache:apache /var/www/zaraoder/*
 
-#chmod -R 755 /var/www/html/*
+#chmod -R 755 /var/www/zaraoder/*
 
 ```
 
