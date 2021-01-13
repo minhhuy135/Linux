@@ -72,7 +72,7 @@ Mở /etc/php-fpm.d/www.conftệp cấu hình bằng cách sử dụng vi hoặc
 ```
 vi/etc/php-fpm.d/www.conf
 ```
-![anh5](https://image.prntscr.com/image/Oi8hktGrTo_3NFxpyWA5pQ.png)
+![anh5](https://image.prntscr.com/image/CceotYbzQ3CvrxiHUIaRvw.png)
 
 Đầu tiên, hãy mở một tệp mới trong /etc/nginx/conf.dthư mục:
 ```
@@ -126,4 +126,69 @@ Tiếp theo, khởi động lại Nginx để áp dụng các thay đổi:
  systemctl restart nginx
 ```
 
+Ta lên web gõ zaraoder.xyz sẽ hiển thị trang html đã tạo
 
+![anh6](https://image.prntscr.com/image/y8lhNU3fTfKb6-qX41gRMA.png)
+
+## 4. Cài đặt WordPress
+
+Bước 1: Chuẩn bị. Trước khi tiến hành cài đặt WordPress, bạn phải cài đặt bộ LEMP trên máy của bạn.
+
+Bước 2: Tạo cơ sở dữ liệu và tài khoản cho WordPress
+
+Ở bước chuẩn bị, mình đã cài mariadb cho cơ sở dũ liệu. Bạn cũng có thể thao tác tương tự với MySQL. Đầu tiên, ta cần đăng nhập vào tài khoản root của cơ sở dữ liệu bằng câu lệnh
+```
+CREATE DATABASE wordpress;
+```
+Bạn cần tạo một tài khoản riêng để quản lí cơ sở dữ liệu cho WordPress. Trong bài mình sẽ đặt tên cho tài khoản là user và mật khẩu là pass, như sau:
+```
+CREATE USER huydm@localhost IDENTIFIED BY 'Huy@1234';
+```
+Tiến hành cấp quyền quản lí cơ sở dữ liệu wordpress cho user mới tạo.
+```
+GRANT ALL PRIVILEGES ON wordpress.* TO huydm@localhost IDENTIFIED BY 'Huy@1234';
+ ```
+Sau đó xác thực lại những thay đổi về quyền:
+
+```
+FLUSH PRIVILEGES;
+```
+Sau khi hoàn tất, thoát khỏi mariadb:
+
+## 5. Tải và cài đặt WordPress Trước khi bắt đầu tiến hành cài gói hỗ trợ php-gd:
+```
+yum -y install php-gd
+```
+Tiến hành tải xuống WordPress với phiên bản mới nhất.
+```
+wget http://wordpress.org/latest.tar.gz
+```
+Lưu ý: Bạn cần để ý tới thư mục đang lưu trữ file wordpress đang được tải xuống. Ở đây mình lưu tại thư mục /root.
+
+Tiến hành giải nén file latest.tar.gz:
+```
+tar xvfz latest.tar.gz
+```
+Lưu ý: giải nén sẽ ra thư mục wordpress có đường dẫn /root/wordpress.
+
+Copy các file trong thư mục WordPress tới đường dẫn /var/www/zaraoder như sau:
+```
+cp -Rvf /root/wordpress/* /var/www/zaraoder
+```
+Bước 4: Cấu hình WordPress
+
+Ta di chuyển đường dẫn tới thư mục chứa các file cài đặt WordPress như sau:
+```
+cd /var/www/zaraoder
+```
+File cấu hình wordpress là wp-config.php. Tuy nhiên tại đây chỉ có file wp-config-sample.php. Tiến hành copy lại file cấu hình như sau:
+```
+cp wp-config-sample.php wp-config.php
+```
+Mở file config với vi để sửa:
+```
+vi wp-config.php
+```
+Trong file này, ta tìm tới dòng như hình dưới đây.
+
+![anh10](https://image.prntscr.com/image/GcUEZoEqSnCUSNx9r-WHiw.png)
