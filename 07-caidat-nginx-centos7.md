@@ -192,3 +192,7 @@ vi wp-config.php
 Trong file này, ta tìm tới dòng như hình dưới đây.
 
 ![anh10](https://image.prntscr.com/image/GcUEZoEqSnCUSNx9r-WHiw.png)
+
+ta truy cập vào web sẽ hiển thị ra
+
+![anh11](https://image.prntscr.com/image/LdR8SvE2Qaa8jTx6TEHriA.png)
