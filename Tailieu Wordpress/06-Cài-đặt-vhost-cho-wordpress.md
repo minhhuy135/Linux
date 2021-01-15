@@ -261,3 +261,9 @@ post_max_size = 64M
 max_execution_time = 300
 ```
 ![anh6](https://image.prntscr.com/image/NB-ECuunTyCnAektO3WWxQ.png)
+
+# Cài đặt SSL Let's Encrypt on CentOS 7 apache
+
+tài liệu tham khảo
+
+1. https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7
