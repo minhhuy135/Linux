@@ -196,3 +196,9 @@ Trong file này, ta tìm tới dòng như hình dưới đây.
 ta truy cập vào web sẽ hiển thị ra
 
 ![anh11](https://image.prntscr.com/image/LdR8SvE2Qaa8jTx6TEHriA.png)
+
+# Cách bảo mật Nginx bằng  SSL Let's Encrypt trên CentOS 7
+
+Tài liệu tham khảo
+
+1. https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-centos-7
