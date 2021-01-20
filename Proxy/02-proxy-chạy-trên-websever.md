@@ -177,3 +177,5 @@ dùng lệnh tailf access.log
 apache /var/log/httpd/access_log 
 
 ![anh6](https://image.prntscr.com/image/9-EzlVm0SJ_eN643mhGoFQ.png)
+
+Trang tham khảo https://zhost.vn/docs/cau-hinh-nginx-lam-reverse-proxy-cho-apache-centos-7/
