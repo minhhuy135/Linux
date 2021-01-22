@@ -15,3 +15,41 @@ mỗi thiết bị(điện thoại, máy tính, tivi,…) khi đã kết nối v
 - Mỗi DNS còn có chức năng ghi nhớ những tên miền mà nó đã phân giải và ưu tiên sử dụng cho những lần truy cập sau.
 
 - Nhờ DNS, bạn có thể sử dụng nhiều dịch vụ mạng như tìm kiếm thông tin, xem phim, chơi game, đăng nhập các website,…Có thể nói nếu không có DNS, con người không thể duyệt Internet nhanh chóng và dễ dàng như ngày nay.
+
+Cấu trúc của hệ thống tên miền:
+
+Hiện nay hệ thống tên miền trên thế giới được phân bố theo cấu trúc hình cây. tên miền cấp cao nhất là tên miền gốc (ROOT) được thể hiện bằng dấu “.”.
+Dưới tên miền gốc có hai loại tên miền là: tên miền cấp cao dùng chung- gTLDs (generic Top Level Domains) và tên miền cấp cao quốc gia – ccTLD (country code Top Level Domains) như .vn, .jp, .kr, .…
+
+![anh2](https://image.prntscr.com/image/2LhWc4v2Q_e6dxYn82FLCw.png)
+
+## Top Level Domain Names (TLDs)
+- TLDs được chia dựa trên các khu vực địa lý hoặc các lĩnh vực liên quan.
+- Tại thời điểm của bài viết, trên thế giới hiện có khoảng 800 TLDs.
+### Danh mục TLDs hiện tại:
+- Generic top-level domain, ví dụ: .org, .com, .net, .gov, .edu,…
+- Country-code top-level domains(tên miền cấp cao quốc gia), ví dụ: .us, .ca, .vn,…
+- New branded top-level domains(tên miền cấp mới cho các thương hiệu), ví dụ: .linux, .microsoft, .companyname,…
+- Infrastructure top-level domains(tên miền cấp cao cho cơ sở hạ tầng), ví dụ: .arpa,…
+
+# Máy chủ tên miền DNS ROOT server
+
+Máy chủ tên miền ở mức cao nhất (ROOT name server) là máy chủ tên miền chứa các thông tin để tìm kiếm các máy chủ tên miền lưu trữ (authority) cho các tên miền thuộc mức cao nhất (top-level-domain).
+Máy chủ ROOT có thể đưa ra các truy vấn (query) để tìm kiếm tối thiểu là các thông tin về địa chỉ của các máy chủ tên miền authority thuộc lớp top-level-domain chứa tên miền muốn tìm. Sau đó, các máy chủ tên miền ở mức top-level-domain có thể cung cấp các thông tin về địa chỉ của máy chủ authority cho tên miền ở mức second-level-domain chứa tên miền muốn tìm. Quá trình tìm kiếm tiếp tục cho đến khi chỉ ra được máy chủ tên miền authority cho tên miền muốn tìm
+
+# 2. Cách thức hoạt động của DNS là gì?
+
+DNS hoạt động từng bước theo cấu trúc của nó. Mỗi máy chủ của nó đều chưa tên miền cục bộ khác nhau. 
+
+![anh2](https://image.prntscr.com/image/0VjIfN2CShSpR7vJvNrI9g.png)
+
+Đầu tiên nó sẽ thực hiện bước truy vấn để lấy thông tin còn được gọi là DNS Query. Có nghĩa là, khi bạn truy cập vào website bằng cách gõ tên miền trên thanh công cụ. DNS server sẽ bắt đầu kiểm tra cơ sở dữ liệu nằm ở hệ điều hành. Nếu DNS server có cơ sở dữ liệu này, nó sẽ thực hiện chuyển đổi và trả kết quả cho người dùng.
+
+Trong trường hợp DNS server không có được câu trả lời. DNS này có thể truy vấn các DNS server khác cao cấp hơn. Tại DNS server cao cấp, DNS này sẽ đóng vai trò là một khách hàng để thực hiện truy vấn.
+
+Tiếp đến, DNS server cao cấp sẽ kiểm tra bộ cache của mình để xem có dữ liệu này không. Nếu có nó sẽ tiếp tục kiểm tra thẩm quyền. Trong trường hợp không có thẩm quyền, DNS sẽ trả kết quả là không tồn tại. Nếu có thẩm quyền và có dữ liệu nó sẽ gửi địa chỉ IP này về DNS server ban đầu. Sau đó DNS này sẽ mã hóa địa chỉ IP và trả kết quả trên máy chủ của người dùng. Người dùng sẽ dùng địa chỉ IP đã được chuyển đổi để kết nối với server chứa website mình cần.
+
+Nhưng thực tế dns hoạt động như này
+
+![anh3](https://image.prntscr.com/image/xgmfXjdWTg6gA7kYttwEbw.png)
+
