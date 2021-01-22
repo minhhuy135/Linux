@@ -1,6 +1,6 @@
 # Apache là gì? Apache Web Server
 
-![anh1](https://image.prntscr.com/image/rdw_KDPiTh_8cMMrFwZXmA.png)
+![anh1](https://image.prntscr.com/image/QeNbWqokSfWWD05Ey9sDag.png)
 
 Apache là phần mềm web server miễn phí mã nguồn mở
 Nó giúp chủ website đưa nội dung lên web – vì vậy có tên gọi là “web server”
