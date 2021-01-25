@@ -36,9 +36,9 @@ ns1.somedomnain.co.uk abuse.somedomnain.co.uk 2006030501 28800 3600 604800 3600
 
 Trong đó :
  
- - ns1.somedomnain.co.uk : giá trị dns chính của tên miền hoặc máy chủ
+ -ns1.somedomnain.co.uk : giá trị dns chính của tên miền hoặc máy chủ
 
- - abuse.somedomnain.co.uk chuyển đổi từ dạng abuse@somedomnain.co.uk thể hiện chủ thể sở hữu tên miền này
+ -abuse.somedomnain.co.uk chuyển đổi từ dạng  abuse@somedomnain.co.uk thể hiện chủ thể sở hữu tên miền này
 
 - 2006030501 : Thời gian cập nhật DNS cho ten miền mới nhất
 
