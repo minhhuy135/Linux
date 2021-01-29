@@ -22,11 +22,12 @@ Khi tạo thành công
 
 ![anh7](https://image.prntscr.com/image/A3srZWm1Q2KtgdTnQdEAvg.png)
 
-![anh8](https://image.prntscr.com/image/A3srZWm1Q2KtgdTnQdEAvg.png)
+
 
 chọn phiên bản muốn cài
 
 ![anh9](https://image.prntscr.com/image/uKe61CejRvOw9hFR4dAjuw.png)
+
 
 ![anh10](https://image.prntscr.com/image/4qtZnPClTxuJ5NuH6dHkmA.png)
 
@@ -38,7 +39,7 @@ cài đặt centos 7
 
 ![anh12](https://image.prntscr.com/image/zWbe4oCkR42uMdg-BpKP6g.png)
 
-sau khi reboot song ta dish (usp để boot ra)
+sau khi reboot song ta dish (usbđể boot ra)
 
 ![anh13](https://image.prntscr.com/image/r4LbQLp_R7GfNZalNdqzRg.png)
 
