@@ -131,7 +131,7 @@ yum install tcpdump
 tcpdump -nni ens33 -n port 67 and port 68
 ```
 
-![anh7](https://image.prntscr.com/image/W0giiNkJSSanPcp_r_PvHA.png)
+![anh7](https://image.prntscr.com/image/sktZvG8-TtaDis3YtG7hcg.png)
 
 - Từ hình trên ta có thể thấy Tcpdump bắt được 4 gói tin:
   - Client gửi gói tin DHCP Discover ra toàn mạng, do chưa có địa chỉ IP nên client dùng địa chỉ nguồn 192.168.159.140 ra toàn mạng. Gói tin này chưa có địa chỉ MAC của client.
