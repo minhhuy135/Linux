@@ -76,14 +76,6 @@ Lọc ra 10 tiến trình sử dụng nhiều tài nguyên được sắp xếp 
 
 Để kiểm tra các IP truy cập vào Webserver nói riêng và Apache nói chung, ta sử dụng lệnh awk để in ra kết quả tại access_log của Apache. Ta có thể sử dụng thêm lệnh sort để lọc kết quả.
 
-## Tài liệu tham khảo
-- https://www.tecmint.com/find-top-ip-address-accessing-apache-web-server/
-
-- https://www.tecmint.com/find-linux-processes-memory-ram-cpu-usage/
-
-- https://phoenixnap.com/kb/check-cpu-usage-load-linux
-
-- https://linuxhint.com/check_memory_usage_process_linux/
 
 ##  Kiểm tra các IP truy cập vào Apache nhiều nhất
 Để kiểm tra các IP truy cập vào Webserver nói riêng và Apache nói chung, ta sử dụng lệnh awk để in ra kết quả tại access_log của Apache. Ta có thể sử dụng thêm lệnh sort để lọc kết quả.
@@ -101,3 +93,12 @@ Trong đó:
 - sort -nr: Kết quả khi in ra sẽ được sắp xếp theo thứ tự từ lớn đến bé.
 
 - head -n 10: Hiển thị ra 10 dòng đầu tiên theo bộ lọc.
+
+## Tài liệu tham khảo
+- https://www.tecmint.com/find-top-ip-address-accessing-apache-web-server/
+
+- https://www.tecmint.com/find-linux-processes-memory-ram-cpu-usage/
+
+- https://phoenixnap.com/kb/check-cpu-usage-load-linux
+
+- https://linuxhint.com/check_memory_usage_process_linux/
