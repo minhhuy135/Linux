@@ -94,7 +94,7 @@ if [ -n "$SSH_CLIENT" ]; then
     rm $TMPFILE
 fi
 ```
-![anh6](https://image.prntscr.com/image/lLMk8sVWQ4O_NCIMKEFA5A.png)
+![anh6](https://image.prntscr.com/image/Q9sdjYNTTgej8x18LNkuOg.png)
 
 Trong đó, ta chỉ cần điền chat_id và TOKEN mà ta nhận được ở trên sau đó lưu lại là được. Lưu ý: tại chat_id phải có dấu - ở trước.
 
