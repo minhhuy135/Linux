@@ -37,12 +37,13 @@ Postfix là chương trình mã nguồn mở và miễn phí (free and open-sour
 ```
 systemctl restart postfix
 systemctl enable postfix
+```
 ### 4. Cấu hình Postfix
 
 Mở file cấu hình `main.cf`:
-
-`vi /etc/postfix/main.cf`
-
+```
+vi /etc/postfix/main.cf`
+```
 Thêm những cấu hình sau:
 
 ```
