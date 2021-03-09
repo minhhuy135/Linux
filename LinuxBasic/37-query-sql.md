@@ -292,4 +292,8 @@ Xóa bảng:
 drop table  [table_name]; 
 
 ```
+Tài liệu tìm hiểu :
 
+https://news.cloud365.vn/thao-tac-quan-tri-mariadb-tren-centos-7/
+
+https://quantrimang.com/13-cau-lenh-sql-quan-trong-programmer-nao-cung-can-biet-136595
