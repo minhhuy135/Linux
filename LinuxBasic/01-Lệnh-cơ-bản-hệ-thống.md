@@ -187,3 +187,73 @@ Chỉ áp dụng với file định dạng `.tar`.
 - Thêm thư mục A vào `filenen.tar`
 
 `# tar -rvf filenen.tar A` 
+
+1. Kiểm tra phiên bản hệ điều hành Linux đang chạy
+```
+ # cat  /etc/centos-release
+ ```
+
+ 2. Kiểm tra các ổ hiện tại trên hệ thống
+ ```
+ # fdisk -l
+
+ ```
+ ![anh11](https://image.prntscr.com/image/Js8L8McmRRGgbKFSI32eIg.png)
+
+ 3. Kiểm tra các phân vùng và mức độ sử dụng trên các phân vùng
+ ``` 
+ df -h
+ ```
+ ![anh12](https://image.prntscr.com/image/jMtWLLVNQuyHx1B1Z6W8-A.png)
+
+ 4. Kiểm tra số lượng CPU của VPS:
+ ```
+ # nproc
+
+ ```
+ 5. Kiểm tra dung lượng RAM
+```
+# free -m
+
+```
+![anh13](https://image.prntscr.com/image/Db4mhtcUQ3WkiIPRfjpKtA.png)
+
+6. Các lệnh xử lý file
+```
+[root@localhost ~]# cd /dir  - Di chuyển tới 1 thư mục dir
+
+[root@localhost ~]# pwd - Hiển thi đường dẫn thư mục hiện hành
+
+[root@localhost ~]# mkdir inet - Tạo 1 thư mục có tê inet
+
+[root@localhost ~]# rm tesst.txt - Xóa 1 file test.txt
+
+[root@localhost ~]# rm -rf  dir/ - Xóa toàn bộ thư mục dir và các file bên trong
+
+[root@localhost ~]# mv dir1 dir2 - Đổi tên thư mục dir1 thành dir2
+
+[root@localhost ~]# cp file1 file2 - Copy file 1 thành file 2
+
+[root@localhost ~]# cat hautx.txt - Xem nội dung 1 file có tên hautx.txt
+
+[root@localhost ~]# tail -f /var/log/message - Hiện nội dung của file message và cập nhật liên tục, khởi đầu với 10 dòng cuối.
+```
+8. Lệnh quản lý tiến trình
+```
+[root@localhost ~]# ps -ef| grep ..... Kiểm tra một tiến trình mong muốn đang hoạt động
+
+ [root@localhost ~]# top -c - Hiển thị các tiến trình đang chạy.
+
+ [root@localhost ~]# kill pid - Dừng ép 1 tiến trình đang chạy
+ ```
+
+ 9. Quyền sử dụng tập tin
+ ```
+ [root@localhost ~]# chmod 755 hautx.txt - Phân quyền sử dụng tập tin hautx.txt
+
+(Chú ý:Mỗi chữ số ứng với từng tài khoản có được bằng cách cộng các số sau: 4 – đọc (r); 2 – ghi (w); 1 – thực thi (x))
+
+ [root@localhost ~]# chown hautx:hautx test.txt - Phân quyền sở hữu file test.txt cho user hautx
+
+ [root@localhost ~]# chown -R hautx:hautx inet/ - Phân quyền sở hữu toàn bộ thư mục và các file; các thư mục inet
+ ```
