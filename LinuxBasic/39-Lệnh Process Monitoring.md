@@ -80,3 +80,99 @@ Các tham số chính cho lệnh top
 - -p  Chỉ hiển thị các tiến trình với ID được chỉ định
 - -u  Chỉ hiển thị những tiến trình của người dùng được chỉ định
 - -i  Không hiển thị các idle task
+
+# Lệnh ps (Process status)
+Lệnh ps liệt kê các process đang chạy và PID của chúng cùng một số thông tin khác phụ thuộc vào các tùy chọn khác nhau.
+
+Nó sẽ đọc thông tin quá trình từ các tệp ảo trong hệ thống /proc.
+
+ps có nhiều option để có thể chọn lọc đầu ra theo nhu cầu.
+
+Cú pháp
+```
+ps [option]
+```
+
+## Ý nghĩa một số trường thông tin
+|Tên|Ý nghĩa|
+|-|-|
+|CMD|Câu lệnh thực thi tiến trình|
+|%CPU|Lượng cpu sử dụng|
+|%MEM|Lượng Ram tiêu thụ|
+|PID|Mã tiến trình|
+|PPID|Mã của tiến trình cha|
+|UID|Mã người dùng|
+|USER|Tên người dùng|
+|PRI|Độ ưu tiên của tiến trình|
+|RSS|Lượng bộ nhớ sử dụng thực|
+|VSZ or SZ|Lượng bộ nhớ ảo sử dụng|
+|S or STAT|Chứa đoạn mã code mô tả trạng thái của tiến trình|
+|Start or STIME|Thời gian mà câu lệnh đó khởi động. Nhỏ hơn 24h là “HH:MM:SS”, lớn hơn là “Mmm dd”|
+|TTY|Terminal liên quan tới tiến trình|
+
+
+
+
+
+
+1. Xem thông tin shell hiện tại
+```
+ps
+```
+OUTPUT
+
+![anh1](https://image.prntscr.com/image/SZqhp7FbThGpHENQWJpnkA.png)
+
+Thông tin trong bảng:
+
+PID:	Id của tiến trình
+
+TTY :	Thông tin terminal mà người dùng đăng nhập
+
+TIME : 	Lượng CPU tính bằng phút giây mà tiến trình đó chạy
+
+CMD: 	Câu lệnh để thực hiện process đó
+
+## Hiển thị tất cả các tiến trình
+```
+ps -eF
+```
+![anh2](https://image.prntscr.com/image/nfBfXaAUSt_ARNFvH0DyRA.png)
+
+
+
+2. Xem các tiến trình theo user
+```
+ps -FG [user]
+```
+![anh3](https://image.prntscr.com/image/AQrONWp4Q2ClL6FC23iSeQ.png)
+
+3. Xem thông tin các tiến trình chạy dưới quyền root
+```
+ps -U root -u root u
+```
+![anh4](https://image.prntscr.com/image/kqYhsaQTRdiFdhG6HDCj8w.png)
+
+4. Hiển thị các process sử dụng nhiều RAM nhất theo thứ tự từ cao xuống thấp.
+```
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+```
+![anh5](https://image.prntscr.com/image/odr_JB8FTVeuHoQ2WY3O8g.png)
+
+5. Hiển thị các process sử dụng nhiều CPU nhất từ cao tới thấp
+```
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
+```
+![anh6](https://image.prntscr.com/image/VeixQKpZQ5CNQguQ3aTaqQ.png)
+
+6. Theo dõi xem process nào đang sử dụng nhiều CPU nhất
+```
+watch -n 1 'ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu'
+```
+![anh7](https://image.prntscr.com/image/GapWlCIyQFmJT2qkjNBWgQ.png)
+
+7. Theo dõi xem process nào đang sử dụng nhiều RAM nhất
+```
+watch -n 1 'ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem'
+```
+![anh8](https://image.prntscr.com/image/tWmbRtvOQ9mlTJOgPPNdTQ.png)
