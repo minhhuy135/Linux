@@ -64,11 +64,11 @@ top -c
 
 9. Quyền sử dụng tập tin
 
-- [root@localhost ~]# chmod 755 huytx.txt - Phân quyền sử dụng tập tin hautx.txt
+- [root@localhost ~]# chmod 755 huytx.txt - Phân quyền sử dụng tập tin huytx.txt
 
 (Chú ý:Mỗi chữ số ứng với từng tài khoản có được bằng cách cộng các số sau: 4 – đọc (r); 2 – ghi (w); 1 – thực thi (x))
 
- [root@localhost ~]# chown huytx:hautx test.txt - Phân quyền sở hữu file test.txt cho user huytx
+ [root@localhost ~]# chown huytx:huytx test.txt - Phân quyền sở hữu file test.txt cho user huytx
 
  [root@localhost ~]# chown -R huytx:huytx inet/ - Phân quyền sở hữu toàn bộ thư mục và các file; các thư mục inet
 
