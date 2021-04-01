@@ -108,3 +108,179 @@ Tạo tên miền : sau khi đăng nhập bằng tài khoản user hệ thống 
 - Tạo database: Create database
 
 ![anh9](https://image.prntscr.com/image/KpqC2YJUTxiarz3_s7LFTg.png)
+
+- Điền thông tin database rồi chọn pass random và bấm vào Create để tạo mới database:
+
+![anh10](https://image.prntscr.com/image/vQjqBg4iRKGb7lw2OA2qcA.png)
+
+- sau khi hoàn thành hệ thống sẽ hiển thị thông tin database
+
+![anh11](https://image.prntscr.com/image/6XJ72vHWQaixvOVWThUnLw.png)
+
+- Up site wordpress
+
+  - Đầu tiên phải tải file của wordpress: https://wordpress.org/download/
+
+  - Các bước up site:
+1. 
+  ![anh12](https://image.prntscr.com/image/ct0s95nyTvCMCXhuSBFPdg.png)
+
+2 .
+![anh13](https://image.prntscr.com/image/h3yFYaiRTkCyg-1eOEY-YQ.png)
+
+3. 
+![anh14](https://image.prntscr.com/image/ACgu4ISVSjGADN1DRirTLA.png)
+
+4. 
+![anh15](https://image.prntscr.com/image/xX_imIgIQrSRhIZ9mLZgwg.png)
+
+Chú ý : Để ý phần dung lượng để up file 
+
+![anh16](https://image.prntscr.com/image/RE8knA-5Tkq8OboDYoVOdA.png)
+
+5. Ta đã thấy file wordpres và tiến hành giải nén
+
+![anh17](https://image.prntscr.com/image/mI-DVcsQTxSTmE8hz6LvXA.png)
+
+Giải nén
+
+![anh18](https://image.prntscr.com/image/kqdBASpxSg2VojPIxpLtDQ.png)
+
+![anh19](https://image.prntscr.com/image/5kN3cKAHRC2fUexEk8aw3A.png)
+
+6. 
+- chuyển dữ liệu trong thư mục wordpress sang thư mục public_html
+
+add to clipboard : thêm vào khay nhớ tạm
+
+![anh20](https://image.prntscr.com/image/2EBnh4VuTdO68Llh3EtV7Q.png)
+
+- sang thư mục public_html chọn move clipboard files here để chuyển các file sang thư mục này
+
+![anh21](https://image.prntscr.com/image/-oDx8dhcTyeV_ziOUOxqvw.png)
+
+## kết nối source code với mysql
+
+Chọn File wp-config.php để cấu hình.
+
+Lưu ý : Bạn cần đổi tên wp-config-sample.php thành wp-config.php trước.
+
+![anh22](https://image.prntscr.com/image/pKdLzfDBQ-SGzq5Ic6JCSQ.png)
+
+![anh23](https://image.prntscr.com/image/x019QzgpSVK1RteLvQJKGg.png)
+
+## Trỏ domain về hosting
+Nếu bạn đã có domain : thì trỏ record A domain về IP và kiểm tra
+Nếu bạn chưa mua domain mà bạn cần test trước thì bạn làm như sau:
+
+
+C:\Windows\System32\drivers\etc\hosts
+
+![anh24](https://image.prntscr.com/image/JfACG2c8S0maKRKCUOlb1w.png)
+
+Kiểm tra lại xem domain domain đã trỏ về hosting chưa.
+
+start -> run -> cmd
+
+Ping pichianho.vn
+
+![anh25](https://image.prntscr.com/image/tWGMljYFTROzIGRD63JWxQ.png)
+
+Nếu domain của bạn đã trỏ về hosting thì bạn đã trỏ domain local thành công.
+
+Vào trình duyệt và nhập domain pichianho.vn
+
+![anh26](https://image.prntscr.com/image/RefZ83qtQ06Vv8Q0S2LOLQ.png)
+
+# 5. Tạo email cho các khg theo tên miền.
+
+Chọn tên miền muốn sử dụng, ở đây tôi chọn tên miền huydm.xyz
+
+![anh29](https://image.prntscr.com/image/oC84Nim3SSKnvnKkaiajWA.png)
+
+![anh27](https://image.prntscr.com/image/TMntsAJATwSeUNmBnkxqyw.png)
+
+Sau khi tạo thành công:
+
+![anh28](https://image.prntscr.com/image/azZ8XDVOT7_6QHYFhhbupw.png)
+
+Đăng nhập Webmail:
+
+trình duyệt gõ : http://103.159.50.188/roundcube/
+
+![anh30](https://image.prntscr.com/image/neqJssjBT9mFIlajTXc8dQ.png)
+
+Giao diện của webmaill
+
+![ANH31](https://image.prntscr.com/image/cHgVC0zKT76r4fXgywNF_A.png)
+
+6. Gửi mail khi tạo gói cho khg hoặc thay đổi các thông tin của client
+
+7. Backup / restore code, db trên chính máy DA
+
+- Backup:
+
+  - user: chọn Create Restore/Backups bỏ tick phần E-mail và FTP sau đó chọn create backups:
+
+![anh32](https://image.prntscr.com/image/5ugC4tJ5QiaA0W1oY3Q1Jg.png)
+
+Sau khi hoàn thành backup thì ta có thể xem lại: trong phần File Manager > backups
+
+![anh33](https://image.prntscr.com/image/1RMT4jT_TZ6qsFxw_JBK6Q.png)
+
+# admin:
+- Đối với tài khoản admin có thể đặt lịch backup hay chọn backup theo user hoặc tất cả user
+- có thể sử dụng tính năng backup lưu trữ sang server khác
+
+![anh34](https://image.prntscr.com/image/yXAJDjykTqalFTSOIasGIQ.png)
+
+
+8. Cấu hình SSL Let's encrypt
+
+Đăng nhập DA bằng tài khoản user kéo xuống phần advanced features chọn SSL Certificates
+
+![anh35](https://image.prntscr.com/image/j5dUJbqXTZymfcesXSSIkQ.png)
+
+- Tích chọn ô 1 và 2 như ảnh dưới đây. Mục 3 điền email của quý khách vào . Key Size (bits), Certificate Type chọn như hình dưới đây. Sau đó kéo chuột xuống dưới và click “save” Chú ý: SSL is currently enabled for this domain.
+
+![anh36](https://image.prntscr.com/image/bwhcZa2lT3e6zg5acQuzWA.png)
+
+- Sau khi cài đặt hệ thống sẽ sinh ra keyl, tiếp tục điều hường ssl sang https và chứng thực chứng chỉ với tổ chức phát hành
+
+![anh37](https://image.prntscr.com/image/856jIyYJSmucwfrTmYK8cw.png)
+
+chú ý tên domain phải là tên miền đăng ký thật và được trỏ về hosting
+
+# 9. Sử dụng custombuid để thay đổi phiên bản các ứng dụng (hay dùng PHP, MySQL, build Multil version PHP)
+
+- Đăng nhập hệ thống với tài khoản Admin và phần CustomBuild 2.0
+
+![anh38](https://image.prntscr.com/image/ZRCTa-BPRDSguQheMxdbXg.png)
+
+- tới phần ` Edit Opition` chọn các phiên bản muốn cài đặt và lưu lại
+
+![anh39](https://image.prntscr.com/image/5iLziIiQQn6Vo9wGdbOLTg.png)
+
+# 10. Xác định file log của DA
+- Sau khi bạn đăng nhập vô tài khoản DirectA dmin bằng quyền user, xong rồi các bạn vô trong mục site summary / statistics / logs như hình bên dưới
+
+![anh40](https://image.prntscr.com/image/dIo18sq5QnSpiQ5Zaq1TbA.png)
+
+Bạn có thể xem log ở nhiều dạng khác nhau: xem toàn bộ log, xem 100 dòng đầu tiên hoặc 10 dòng đầu tiên
+
+![anh41](https://image.prntscr.com/image/snI9HzzLRkGGtA-dj02ldQ.png)
+
+
+41.10.21.60 - - [28/Sep/2016:17:40:33 +0700] "GET /wp-login.php HTTP/1.1" 200 3702 "-" "Mozilla/5.0 (Windows NT 5.1; rv:29.0) Gecko/20100101 Firefox/29.0"
+41.10.21.60 ip khách truy cập
+ [28/Sep/2016:17:40:33 +0700] thời gian truy cập
+ GET : phương thức GET
+ /wp-login.php tập tin truy cập
+ "-": thông tin referer
+ HTTP/1.1 chuẩn http, lâu lâu vẫn còn dạng cổ xưa là HTTP/1.0 thường dùng trong tool ddos
+ Mozilla/5.0 (Windows NT 5.1; rv:29.0) Gecko/20100101 Firefox/29.0: user agent của trình duyệt
+
+- ip: những ip nào thường xuyên truy cập, đối với ddos thì điều này rất quan trọng.
+- thời gian: thời gian cho chúng ta biết đối tượng phá hoại hành động vào lúc nào, từ đó mình sẽ dễ theo dõi và xác định đối tượng dùng tool hay dùng tay.
+- đường dẫn: đây là một thông tin khá quan trọng, nhất là đối với lỗ hổng website, giúp bạn biết được đối tượng đánh vào vị trí nào, file nào.
+- thông tin trình duyệt cũng là một yếu tố cũng rất có lợi cho bạn, bạn có thể ngăn chặn ddos, thường thì đối tượng nếu dùng tool đời cũ sẽ có lỗ hổng về chỗ này, các trình duyệt nó thống nhất với nhau, bạn có thể dễ dàng chặn được.
