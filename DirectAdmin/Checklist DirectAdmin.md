@@ -284,3 +284,91 @@ Bạn có thể xem log ở nhiều dạng khác nhau: xem toàn bộ log, xem 1
 - thời gian: thời gian cho chúng ta biết đối tượng phá hoại hành động vào lúc nào, từ đó mình sẽ dễ theo dõi và xác định đối tượng dùng tool hay dùng tay.
 - đường dẫn: đây là một thông tin khá quan trọng, nhất là đối với lỗ hổng website, giúp bạn biết được đối tượng đánh vào vị trí nào, file nào.
 - thông tin trình duyệt cũng là một yếu tố cũng rất có lợi cho bạn, bạn có thể ngăn chặn ddos, thường thì đối tượng nếu dùng tool đời cũ sẽ có lỗ hổng về chỗ này, các trình duyệt nó thống nhất với nhau, bạn có thể dễ dàng chặn được.
+
+# 11. Hướng dẫn đặt lịch backup trên Directadmin
+
+Để đặt lịch Backup cho DA bạn đăng nhập hệ thống bàng tài khoản Admin.
+
+Bước 1: Vào phần Admin Backup/Transfer
+
+![anh42](https://image.prntscr.com/image/f2qBmeEHQW_0rCzsUPVr5A.png)
+
+Bước 2: Thực hiện backup và lập lịch
+
+![anh43](https://image.prntscr.com/image/Wg5QrBDLTOSkLOtUW50RWg.png)
+
+Thông tin các thông số của cron
+
+- Minute : 0-59 : có nghĩa là từ 0 phút đến 59 phút
+
+- Hour : 0-23 : từ 0 giờ đến 23 giờ
+
+- Day of Month : 1-31 : ngày nào trong tháng
+
+- Month :1-12 : Tháng nào trong năm
+
+- Day of week : 0-7 : ngày nào trong tuần. (0 là ngày chủ nhật)
+
+- Nếu tùy chọn như hình trên thì Quý Khách đang cấu hình backup tự động tất cả các user hàng ngày vào lúc 5 giờ sáng, tất cả các dữ liệu của user sẽ backup vào thư mục /home/admin/admin_backups.
+
+- Nếu muốn 1 tuần backup 1 lần vào lúc 5h sáng ngày thứ 7 thì Quý Khách chỉnh lại mục Day of week như trên hình thành số 6 => Submit
+
+Bước 3: Kiểm tra việc cron có hoạt động hay không : Nếu xuất hiện như hình là đúng
+
+![anh44](https://image.prntscr.com/image/yEYMLt7rRA6sa3bw0ticlA.png)
+
+# 12. Hướng dẫn kiểm tra log truy cập với Direct Admin
+
+B1- Truy cập vào giao diện Direct Admin và chọn vào Log Viewer.
+
+![anh45](https://image.prntscr.com/image/pkrHb7FjS56HYBY8tnQgPg.png)
+
+B2- Khi vào Log Viewer, chúng ta có thể chọn xem các log đã được Direct Admin liệt kê ở cửa sổ tùy thuộc vào từng dịch vụ. Giả sử chúng ta muốn xem log truy cập của Web Server, ta chọn /var/log/httpd/access_log. Sau khi chọn xong click vào Show Log
+
+![anh46](https://image.prntscr.com/image/k3DV52y2Q-y3G6OqUz2Utw.png)
+
+B3- Kết quả hiển thị của /var/log/httpd/access_log như sau:
+
+![anh47](https://image.prntscr.com/image/5miRPujfQh2M0q9_G15YpA.png)
+
+- Dịch vụ mail server: Exim
+- Dịch vụ FTP: PureFTP
+- Kernel Log: chứa các log liên quan đến nhân của hệ điều hành
+- Direct Admin Log: chứa các log liên quan đến Direct Admin như: login, security, ....
+
+## kiểm tra thông số VPS, server qua DirectAdmin
+
+Login vào DA chọn chức năng System Infomation 
+
+![anh48](https://image.prntscr.com/image/2Fs8Uy_JQOKPDfwE7ANM9Q.png)
+
+Dựa vào 3 tiêu chí cơ bản:
+
+- Số lượng CPU, thông số và cấu hình của CPU
+- Lượng RAM được cấp chovps hoặc server
+- Các thông số cơ bản của hệ thống như phiên bản sử dụng PHP, MySQL, Exim, DirectAdmin,...
+
+# 13. Add thêm IP cho các domain chạy các IP khác nhau
+
+Phần này bao gồm việc hiểu các danh mục IP, thêm, chỉ định và xóa địa chỉ IP. Từ menu Administrator menu, nhấp vào liên kết "IP ManagerP". Bạn sẽ thấy một trang trông giống như sau:
+
+![anh49](https://image.prntscr.com/image/1lKnxtjcR9_ao4kUQWaioQ.png)
+
+![anh50](https://image.prntscr.com/image/nTUGo7WVSYKGib56vGCQDg.png#)
+
+## 14. Cấu hình chuyển các mode httpd
+
+Sử dụng tính năng custombuild 2.0 để chuyển đổi các chế đội httpd
+
+![anh51](https://image.prntscr.com/image/KzG066k6SUG7yQckZGTaCQ.png)
+
+![anh52](https://image.prntscr.com/image/l9ahJna9S8K7qFKzoqXzbw.png)
+
+MPM (Multi processing module) là một cơ chế hoạt động của Web Server Apache, cơ chế này sẽ quyết định cách thức tiếp nhận và xử lý các kết nối request từ người dùng. Apache hỗ trợ 3 cơ chế MPM tới thời điểm hiện tại tuỳ theo nhu cầu sử dụng. 
+
+Lưu ý :
+- Có 3 cơ chế MPM mà Apache hỗ trợ : event, prefork và worker.
+- MPM không phải là module, nó được compile với source code khi cài đặt.
+- Apache chỉ có thể chạy 1 MPM vào 1 thời điểm.
+
+# 15. Cài đặt và sử dụng CSF

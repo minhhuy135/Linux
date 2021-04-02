@@ -64,7 +64,10 @@ Bây giờ ta sẽ cấu hình dịch vụ CSF để kích hoạt tính năng ho
 ```
 `TESTING` = “0”
 Mặc định khi vừa cài TESTING = “1”, với TESTING = “1” thì LFD daemon (Login Fail Detect daemon) sẽ không hoạt động, do đó nếu có gì sai sót thì server cũng sẽ không block IP của bạn. Nếu cấu hình đã ổn thì bạn tắt TESTING để LFD bắt đầu hoạt động và chặn các IP tấn công.
+
+
 ![anh1](https://image.prntscr.com/image/SK4s3hmXRYewoLNyBaiiYg.png)
+
 
 - TESTING_INTERVAL = "5"
 
