@@ -198,7 +198,7 @@ Những modules này cho phép bạn trực tiếp upload và quản lý file t�
 
 ## III. Thực hiện Check list
 
-1. Tạo gói Packages
+### 1. Tạo gói Packages
 Đăng nhập WHM bằng tài khoản root tới mục Manage Your Accounts chọn : Add a Package
 
 ![anh3](https://image.prntscr.com/image/8tlA3J-PT4_7hDmd2wwSOQ.png)
@@ -208,7 +208,7 @@ Những modules này cho phép bạn trực tiếp upload và quản lý file t�
 ![anh4](https://image.prntscr.com/image/9MXNCYpiTNmx7f4avFmuzA.png)
 
 
-2. Tạo Client, Domain
+### 2. Tạo Client, Domain
 - Để tạo tài khoản cPanel trên WHM chúng ta làm như sau:
 - Trang chủ WHM >> Account Funtions >> Create a New Account.
 - Domain Information là nơi thiết lập các thông tin cơ bản cho tài khoản cPanel.
@@ -386,7 +386,7 @@ Nếu không có vấn đề gì hệ thống sẽ trả về SUCCESS:
 
 - Chọn một ứng dụng Webmail làm mặc định. Ở đây mình chọn roundcube:
 
-# 7. Backups/Restore Database, code
+## 7. Backups/Restore Database, code
 
 - Trong giao diện quản trị Cpanel truy cập mục Backup Wizard
 
