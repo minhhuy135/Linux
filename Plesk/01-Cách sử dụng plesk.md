@@ -1,4 +1,3 @@
-3. Hướng dẫn cài đặt Plesk trên CentOS 7
 
 III. hướng dẫn sử dụng Plesk
 
