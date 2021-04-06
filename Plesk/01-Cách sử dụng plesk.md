@@ -1,5 +1,28 @@
 3. Hướng dẫn cài đặt Plesk trên CentOS 7
 
+III. hướng dẫn sử dụng Plesk
+
+1. tạo gói Plan
+
+2. Tạo user, Domain
+
+3. Tạo tài khoản FTP
+
+4. up site Wordpress
+
+5. Cài đặt chứng chỉ SSL DAOUSIGN
+
+6. Thực hiện Backups/Restore
+
+6.1 thực hiện Backup
+6.2 Đặt lịch Backups
+6.3 Restore
+7. Tạo mail theo tên miền khách hàng
+
+8. Xác định file logs
+
+3. Hướng dẫn cài đặt Plesk trên CentOS 7
+
 - login vào server qua giao thức SSH sử dụng tài khoản root
 
 - chạy lệnh cài đặt wget
