@@ -181,5 +181,15 @@ D6592B1C-9853-11EB-93E4-A4BF96496D78._domainkey IN      TXT     ( "v=DKIM1; k=rs
           "HzXb3hEmyB1eZ2ScrIlXGa/4qau1IEQEXo7+NtXkqMhB7aybtpm1S4g88wSnpMXLLE+hpJ9jWyS3XAZoxqLvUznVi9YN6Xaf7t7GYLk3gUsYZB5nTgkedRpmOUnCaiflXG8GySjQIDAQAB" )  ; ----- DKIM                    key D6592B1C-9853-11EB-93E4-A4BF96496D78 for zaraoder.xyz
 ```
 
+
+Bản ghi DKIM: Tên E395C5A6-6B90-11EA-8B81-7E2363C56483._domainkey loại bản ghi txt giá trị
+```
+"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA58Xz+PP23B7npDWLwDIjEPB4rPnyfo/ZHxWshFlWa8npUPmI2bxgWuRG3OqgHgxNrg6aBDN2bu7YBB1rqKR+jnWEZ/ojhX6OA7ik3Z82d2xZk+NfPCsgblo8XLLAwask3CJ2eXYWbtBqC2J2lDz0cpac1Vx+mNQaR3WWB416wMSt1E3E6iKPVyGK0D72gzuw7TAhcSOlxFDOd9uX9fxJOddsz4bW4ITY6KLQfist2XCqmHgbQ6l1HcVm405qUYDXBMUHJ8kn2fMle2OlE4po7kq//vl8FEmvcCZnTVjlPyC9ymfhBC5T9aWyMMvCrgjqYq/so3qjJ577WhxpWQ/yDwIDAQAB"
+```
+
+Khi get giá trị đoạn dkim chia thành các dấu " bỏ các dấu " ở giữa để ghép lại thành chuỗi.
+
+![anh8](https://image.prntscr.com/image/EFPjMhxqQYe4IdlMolxjKA.png)
+
 Tài liệu tham khảo 
 https://kb.nhanhoa.com/pages/viewpage.action?pageId=33817127
