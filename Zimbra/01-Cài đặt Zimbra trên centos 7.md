@@ -158,3 +158,28 @@ service zimbra status
 - Thêm bản ghi A: Tên mail loại bản A giá trị 103.159.50.188
 
 - Thêm bản ghi MX: Tên @ loại bản ghi MX giá trị mail.zaraoder.xyz
+
+- Thêm bản ghi _dmarc: _dmarc loại bản ghi txt giá trị v=DMARC1; p=none; rua=mailto:mailauth-reports@mail.zaraoder.xyz
+
+- Thêm bản ghi SPF: @ loại bản ghi txt giá trị v=spf1 +a +mx +ip4:103.159.50.188 ~all
+
+-  Thêm bản ghi PTR ở DNS server của hệ thống DNS Nhân Hòa.
+
+- Thêm bản ghi DKIM các thông số lấy từ email server
+
+Active dkim cho domain congtynhanhoa.space
+```
+su - zimbra
+/opt/zimbra/libexec/zmdkimkeyutil -a -d zaraoder.xyz
+
+```
+```
+DKIM Data added to LDAP for domain zaraoder.xyz with selector D6592B1C-9853-11EB-93E4                   -A4BF96496D78
+Public signature to enter into DNS:
+D6592B1C-9853-11EB-93E4-A4BF96496D78._domainkey IN      TXT     ( "v=DKIM1; k=rsa; "
+          "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA50FbuEzxGJLULVgtKpDEoTdnFNhe TDL7WISW/+dOwEHk9sz7Wd8l1yXtzctPRXVkTHa+UE//XxoeF9guSKBtcvgtYZmSFcpYspPIDfjAOXT8cqXOx                   GzX5iZfztWMCFRj1O9+xBFqRk1YfnEiTLsRfPqJrb+g1n+bbTm/19jWeBvOfCJN1C1lXBt+RNlo6XyYBVUjpn                   cmaahVTj"
+          "HzXb3hEmyB1eZ2ScrIlXGa/4qau1IEQEXo7+NtXkqMhB7aybtpm1S4g88wSnpMXLLE+hpJ9jWyS3XAZoxqLvUznVi9YN6Xaf7t7GYLk3gUsYZB5nTgkedRpmOUnCaiflXG8GySjQIDAQAB" )  ; ----- DKIM                    key D6592B1C-9853-11EB-93E4-A4BF96496D78 for zaraoder.xyz
+```
+
+Tài liệu tham khảo 
+https://kb.nhanhoa.com/pages/viewpage.action?pageId=33817127
