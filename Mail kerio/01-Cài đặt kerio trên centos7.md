@@ -109,3 +109,203 @@ Nếu bạn không thể đăng nhập bằng thông tin đăng nhập quản tr
 Đổi mật khẩu admin:
 
 Chỉnh sửa .users.cfg tệp Vào thư mục /opt/kerio/mailserver mở file .users.cfg
+
+
+![anh23](https://image.prntscr.com/image/fyO5ZP94TkO2c2hec3m-pQ.png)
+
+- Tab Queue Options
+Configuration → SMTP Server → Queue Options
+
++ Maximun number of delivery threads: Số lượng tối đa tin nhắn được gửi cùng
+một lúc.
+
++ Delivery retry interval: Khoảng thời gian Kerio Connect thử gửi lại các tin
+nhắn.
++ Bounce the message to sender if not delivered in: Khoảng thời gian Kerio
+Connect gửi lại các tin nhắn chưa được gửi.
++ Sent the sender a waring if the message is not delivery after: Khoảng thời
+gian mà người gửi được thông báo rằng thư của họ chưa được gửi.
+
+# 4. SSL Certificates
+
+Để bảo mật Kerio Connect sử dụng giao thức SSl/TLS, cần phải xác thực
+qua một chứng chỉ số SSL.
+
+
+Tải chứng chỉ ssl
+```
+yum -y install git dialog libffi-devel mod_ssl openssl-devel python-devel python-pip python-tools python-virtualenv
+```
+```
+git clone https://github.com/letsencrypt/letsencrypt
+
+yum install -y certbot
+
+```
+
+```
+cd letsencrypt
+```
+```
+service kerio-connect stop
+```
+```
+certbot  certonly --standalone -d mail.zaraoder.xyz
+```
+```
+ln -s /etc/letsencrypt/live/mail.zaraoder.xyz/fullchain.pem /opt/kerio/mailserver/sslcert/mail.zaraoder.xyz.crt
+```
+```
+ln -s /etc/letsencrypt/live/mail.zaraoder.xyz/privkey.pem /opt/kerio/mailserver/sslcert/mail.zaraoder.xyz.key
+```
+```
+service kerio-connect start
+```
+
+kiểm tra
+
+![anh28](https://image.prntscr.com/image/3BpSFp6VQwyt6KDl2yIfwg.png)
+
+
+![anh29](https://image.prntscr.com/image/HcgzQNDuSwGEVvRonY2nsg.png)
+
+
+# 5.	Security
+Security policy
+
+Về vấn để bảo mật Kerio Connect thực hiện một trong hai cơ chế sau:
++ Xác thực bảo mật người dùng.
++ Mã hóa trong quá trình truyền thông, giao tiếp
+
+![anh26](https://image.prntscr.com/image/6IHeCBx3TLaHj6vmhk1pRQ.png)
+
+- CRAM-MD5: Xác thực mật khẩu sử dụng theo chuẩn MD5
+- DIGEST-MD5: Xác thực mật khẩu sử dụng chuẩn MD5
+- NTLM: Chỉ sử dụng với Active Directory.
+- Sử dụng SSL nếu không sử dụng phương thức xác thực.
+
+
+![anh27](https://image.prntscr.com/image/U1EiYa1HQ2OTKZy72HzhgQ.png)
+
+ Chọn User must authenticate in order to send messages from a local domain
+
+ Kerio Connect có thể tự động từ chối các email với tên miền giả mạo: Reject
+messages with spoofed local domain.
+
+- Configuring anti-spoofing in Kerio Connect
+
+Người gửi spam có thể giả mạo địa chỉ email để gửi email đi. Để tránh
+trường hợp đó xảy ra sử dụng tính năng anti-spoofing trong Kerio Connect.
+
+
+## 6. Content Filter(Bộ lọc nội dung)
+
+Spam Filter
+
+### 6. 1  Tab spam rating
+
+![anh30](https://image.prntscr.com/image/n29cFwewSs64eps9pVVFgg.png)
+
++ Tag score: Nếu tin nhắn đạt điểm này Kerio Connect sẽ đánh dấu là tin nhắn
+spam.
++ Block score: Nếu tin nhắn đạt số điểm này Kerio Connect sẽ loại bỏ thông điệp.
+
+### 6.2 Tab Kerio Anti-spam
+
+![anh31](https://image.prntscr.com/image/kOXydzArQPaum8OTxtpbAQ.png)
+
++ Kerio Connect gửi dữ liệu được mã hóa tới dịch vụ scan online Bitdefender.
++ Bitdefende quét dữ liệu và gửi kết quả tới Kerio Connect điểm số có thể là 0 cho
+thư rác không phải spam, 1-9 cho các mức spam khác nhau
+
+### 6.3 Tab Blacklist
+
+![anh32](https://image.prntscr.com/image/_JfV-Ax9RR2qVM6U2hc-4Q.png)
+
+Thiết lập danh sách các địa chỉ IP được cho là black list và thêm sửa xóa các
+Internet blacklist.
+
+### 6.4 Tab Custom Rules
+
+![anh33](https://image.prntscr.com/image/UC5ExYGjS_Sq3Rds33MaKw.png)
+
+Cho phép thêm, sửa xóa các rule spam filter, thứ tự ưu tiên từ trên xuống
+dưới.
+
+### 6.5 Tab ID
+![anh34](https://image.prntscr.com/image/yMX4aHwsQYWoeX3seOY9uw.png)
+
+Bật tùy chọn Kiểm tra ID người gọi của mọi tin nhắn đến .
+
+Nếu một tin nhắn bị chặn, Kerio Connect có thể
+
+- Ghi nó vào Nhật ký bảo mật
+- Từ chối nó
+- Tăng / giảm điểm thư rác của nó
+
+### 6.6 Tab SPF
+
+Bật tùy chọn Bật kiểm tra SPF của mọi tin nhắn đến .
+
+![anh35](https://image.prntscr.com/image/8Wt993BfS0yviFVyLNvxGg.png)
+
+
+- Ghi nó vào Nhật ký bảo mật
+- Từ chối nó
+- Tăng / giảm điểm thư rác của nó
+
+Nếu thư được gửi qua máy chủ dự phòng, hãy tạo một nhóm địa chỉ IP của những máy chủ đó sẽ không được SPF kiểm tra.
+
+### 6.7 Tab Greylisting
+![anh36](https://image.prntscr.com/image/sZ-69cr5Rh6nqdiHwM-9XA.png)
+
+- Để chống spam hiệu quả hơn Kerio connect hỗ trợ Greylisting một phương
+pháp chống spam phù hợp với các phương pháp chống thư rác khác và các cơ chế
+trong Kerio connect.
+Khi Greylisting được bật những vấn để sau sẽ xảy ra khi Kerio nhận được
+một tin nhắn:
++ Kerio liên lạc với máy chủ Greylisting và cung cấp thông tin về tin nhắn, máy
++ chủ Greylisting bao gồm danh sách các IP đáng tin cậy
+
++ Nếu danh sách chứa địa chỉ IP của người gửi thư, tin nhắn sẽ chuyển qua danh sách greylisting và được kiểm tra ngay lập tức.
++ Nếu danh sách không chứa địa chỉ IP của người gửi máy chủ Greylisting sẽ trì
+hoãn việc gửi, và cố gắng gửi thư đáng tin cậy lại sau.
++ Một khi tin nhắn được nhận lại dịch vụ Kerio Greylisting sẽ thêm IP của người gửi vào whitelist
+
+### 6.8 Tab Spam Repellent
+![anh37](https://image.prntscr.com/image/6kMk31WlTPiH5ETy9nKHHQ.png)
+
+- pam Repellent tính năng chống thư rác hoạt động bằng cách quan tâm đến
+sự delay khi truyền thông với giao thức SMTP, các máy chủ hợp pháp thường phải
+đợi 2 phút trước khi kết thúc kết nối, trong khi các máy chủ thư rác chỉ có thể đợi 1 vài giây. Một giá trị tốt nhất là 25 giây. Sự điều chỉnh sẽ loại bỏ một số lượng đáng kể thư spam mà không mất email hợp pháp
+
+
+## 7. Antivirus
+
+
+Bảo vệ chống vi-rút trong Kerio Connect
+
+- Kerio Connect bao gồm Kerio Antivirus, một biện pháp bảo vệ tích hợp chống lại các email độc hại có chứa vi rút. Vi rút có thể lây nhiễm vào máy tính của bạn và gây hại cho các tệp của bạn hoặc cho hệ thống máy tính của bạn.
+
+- Đối với bất kỳ thông báo nào mà Kerio Antivirus không thể quét, Kerio Connect có thể Gửi tin nhắn gốc có tiền tố cảnh báo hoặc Từ chối tin nhắn như thể đó là vi rút
+
+
+
+![anh38](https://image.prntscr.com/image/gXSon5QcSwKBkmStST524w.png)
+
+Chọn hành động thực hiện đối với tin nhắn chứa thư rác:
+
+- Discard the message: Hủy thư
+- Deliver the message with the malicious: Gửi thông điệp với mã độc được loại bỏ
+Ngoài ra có thể tùy chọn chuyển tiếp tin nhắn:
+- Forward the original message to an administrator address: Chuyển tiếp
+thông báo tới quản trị viên.
+- Forward the filtered message to an administrator address: Chuyển tiếp
+thư được lọc sang địa chỉ quản trị viên.
+- Đối với bất kỳ tin nhắn nào mà Kerio Antivirus không thể quét, Kerio Connect
+có thể thực hiện một trong các hành động:
+- Deliver the original message with a warning prefixed: Cung cấp thông
+báo với một cảnh báo bắt đầu.
+- Reject the message as if it was a virus: Từ chối tin nhắn coi đó là virus
+
+## 8. Attachment Filter
