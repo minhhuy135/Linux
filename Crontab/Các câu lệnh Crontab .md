@@ -1,8 +1,6 @@
 # Crontab là gì?
 Cron là một cách để tạo và chạy các lệnh theo một chu kỳ xác định. Đây là tiện ích giúp lập lịch trình để chạy những dòng lệnh bên phía server nhằm thực thi một hoặc nhiều công việc nào đó theo thời gian được lập sẵn.
-
-
-#  
+ 
 
 
 ## Crontab làm việc như thế nào?
