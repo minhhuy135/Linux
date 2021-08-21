@@ -68,8 +68,9 @@ Phương pháp thay thế DCV (chỉ Comodo)
 ## 1. Truy cập Vào hosting
 
 
-![anh0](https://prnt.sc/1qdu1tg)
+![anh0](https://image.prntscr.com/image/S-_WIsmQQvuJYu50nayJ3Q.png)
 
 ## . Truy cập Manage SSL sites
 
-![anh1](https://prnt.sc/1qdu3vr)
+![anh1](https://prnt.sc/1qdu5wa)
+
