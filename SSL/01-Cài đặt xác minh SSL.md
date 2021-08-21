@@ -72,5 +72,5 @@ Phương pháp thay thế DCV (chỉ Comodo)
 
 ## . Truy cập Manage SSL sites
 
-![anh1](https://prnt.sc/1qdu5wa)
+![anh1](https://image.prntscr.com/image/ilXKHecpTKaPcdXRG8FR3w.png)
 
