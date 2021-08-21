@@ -70,7 +70,57 @@ Phương pháp thay thế DCV (chỉ Comodo)
 
 ![anh0](https://image.prntscr.com/image/S-_WIsmQQvuJYu50nayJ3Q.png)
 
-## . Truy cập Manage SSL sites
+## 2. Truy cập Manage SSL sites
 
 ![anh1](https://image.prntscr.com/image/ilXKHecpTKaPcdXRG8FR3w.png)
+
+## 3. Hoàn thành cài đặt 
+![anh2](https://image.prntscr.com/image/xG6DCdzNQr_zivkL1PIH6g.png)
+
+
+# Cài đặt SLL trên Diarecadmin
+
+## 1.  Đăng nhập vào VPS chọn Show All Users để tìm website muốn cài đặt 
+
+![anh3](https://image.prntscr.com/image/9-gj2KqFRfmG01m8x9UCrQ.png)
+
+## 2. Chọn SSL Certificates
+
+![anh4](https://image.prntscr.com/image/tAuOVW2rSJyOdskPP_3mkQ.png)
+
+## 3. ADD các file 
+
+![anh5](https://image.prntscr.com/image/H1h7AiCATZihRin4MWtGDA.png)
+
+![anh6](https://image.prntscr.com/image/m3TlSwu9QF_KhdVGgvBX9g.png)
+
+
+![anh7](https://image.prntscr.com/image/vBBK9GJrQVWGleSk2u7w6w.png)
+
+# Cài đặt SSL Pleck
+
+## 1. Truy cập vào hosting
+
+- Đăng nhập vào tên miền muốn cài SSL , chọn SSL/TLS Certificate
+
+![anh8](https://image.prntscr.com/image/oCu7mQQ0RJSIC33kERX_Jg.png)
+
+
+## 2. Chọn phần Advanced Settings
+
+![anh9](https://image.prntscr.com/image/eEkAuSDSTKuzkCVJtswJSw.png)
+
+
+![anh10](https://image.prntscr.com/image/UlfSImuCRI_SaM3Tjr8ZNw.png)
+
+
+![anh11](https://image.prntscr.com/image/YTOvtNhRS__-VC5lJo-ryw.png)
+
+## 3.  Đến bước cuối chọn tên Chúng chỉ SSL vừa đặt tên , ấn vào phần Hosting Settings
+
+
+![anh12](https://image.prntscr.com/image/7wagDReKQLSXjhc6tAdypw.png)
+
+
+![anh13](https://image.prntscr.com/image/mTpnKqq8T72bKkiSjBwohA.png)
 
