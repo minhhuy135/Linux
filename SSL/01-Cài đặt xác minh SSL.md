@@ -63,3 +63,13 @@ Phương pháp thay thế DCV (chỉ Comodo)
 - DNS CNAME-based. Các CSR bạn gửi đến Comodo sẽ được phân tích. Các giá trị hash được cung cấp cho bạn và phải được nhập như một bản ghi DNS CNAME cho tên miền của bạn.
 
 
+# Cài đặt SSL Trên cpanel
+
+## 1. Truy cập Vào hosting
+
+
+![anh0](https://prnt.sc/1qdu1tg)
+
+## . Truy cập Manage SSL sites
+
+![anh1](https://prnt.sc/1qdu3vr)
