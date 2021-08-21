@@ -124,3 +124,70 @@ Phương pháp thay thế DCV (chỉ Comodo)
 
 ![anh13](https://image.prntscr.com/image/mTpnKqq8T72bKkiSjBwohA.png)
 
+
+# Cài đặt SSL web4S
+
+## 1. SSH vào VPS của web 4S
+
+gõ lệnh để xem mọi người trước cài ở phần nào rồi
+
+```
+
+history 
+
+```
+
+## 2. Sau đó vào file config để thêm các đường dẫn 
+
+```
+vi /var/www/domain/zone/serverssl.conf
+
+```
+
+ấn Shift G để đến dòng cuối cùng trong file
+
+
+```
+<VirtualHost *:443>
+        SSLProtocol all -SSLv2 -SSLv3
+        SSLEngine on
+        SSLCertificateFile /var/www/domain/zone/ssl/megaradcenter.com/public.crt
+        SSLCACertificateFile /var/www/domain/zone/ssl/megaradcenter.com/ca.crt
+        SSLCertificateKeyFile /var/www/domain/zone/ssl/megaradcenter.com/private.key
+    ServerAdmin report@nhanhoa.com
+    DocumentRoot /var/www/domain/source/megaradcenter.com
+    ServerName megaradcenter.com
+    ServerAlias www.megaradcenter.com
+    ErrorLog logs/megaradcenter.com-error_log
+    CustomLog logs/megaradcenter.com_log common
+</VirtualHost>
+
+```
+
+
+![anh14](https://image.prntscr.com/image/1NNI8YjYQd2rbJYRTf1QEw.png)
+
+
+## 3. Truy cập đến đườn dẫn thư mục tên miền megaradcenter.com 
+
+```
+cd /var/www/domain/zone/ssl/megaradcenter.com/
+
+```
+![anh15](https://image.prntscr.com/image/rz9anRUlR62aSVsg0jLvRw.png)
+
+
+Sau khi đã tạo và add thông tin vào 3 file , gõ lệnh httpd -t để kiểm tra thấy xanh thì ok
+
+Tiếp đến gỗ lệnh để khởi động lại http
+
+```
+service httpd restart
+
+```
+
+
+
+
+
+
