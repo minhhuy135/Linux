@@ -309,3 +309,52 @@ báo với một cảnh báo bắt đầu.
 - Reject the message as if it was a virus: Từ chối tin nhắn coi đó là virus
 
 ## 8. Attachment Filter
+
+Nhiều virus được ẩn dưới dạng file đính kèm, Kerio có thể lọc các tệp đính
+kèm theo những gì đã cài đặt, nếu phát hiện có vấn đề sẽ loại bỏ các tệp tin đính
+kèm đó
+
+![anh39](https://image.prntscr.com/image/Ynhum4LaRn2PW_417MRX0Q.png)
+
+- Chọn Enable attachment filter(Bật bộ lọc tệp đính kèm)
+
+   - Nếu muốn Kerio connect thông báo cho người gửi tệp đính kèm không được gửi chọn Send the sender a warning…(Gửi cho người gửi một cảnh báo…)
+
+   - Để Kerio connect gửi thư gốc đến một địa chỉ email khác hãy chọn Forward the original messages to(Chuyển tiếp các tin nhắn gốc tới) và nhập địa chỉ.
+
+   - Để Kerio connect gửi thư được lọc đến một địa chỉ email khác hãy chọn
+   Forward the filtered messages to(Chuyển tiếp các tin nhắn đã lọc tới) và nhập địa chỉ.
+
+   - Để loại bỏ các file đính kèm ZIP với các tập tin nguy hiển chọn Discard zip archive containing files with dangerous extensions... tùy chọn.
+     +  Cấu hình các rule, mỗi rule sẽ chặn một tệp đính kèm cụ thể
+
+- Configuration → Content Filter → Attachment Filter -> Add
+
++ Nhập mô tả cho rule mới
++ Định nghĩa kiểu file đính kèm
++ Xác định hành động Kerio Connect blocks/ accepts messages với tệp đính kèm.
+
+![anh41](https://image.prntscr.com/image/c_6IBS2gTfyomynX50E2cg.png)
+
+block the attachment: chặn tệp đính kèm
+
+
+
+accept the attachment: chấp nhận tệp đính kèm
+
+## 9 Message Filter
+
+![anh42](https://image.prntscr.com/image/HfhL-Z-qSNSAg4BApIPBAA.png)
+
+Ví dụ Gửi tin nhắn trả lời tự động
+
+![anh43](https://image.prntscr.com/image/fnvSnzFwRxWBq3AQ7MJA4Q.png)
+
+
+Gửi một bản sao của một tin nhắn đến một địa chỉ email khác
+
+![anh44](https://image.prntscr.com/image/ch3KVmtwTcqSHDOreEzujQ.png)
+
+## 10 . Denifitions
+
+ ### Time Ranges
