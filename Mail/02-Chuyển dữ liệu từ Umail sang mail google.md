@@ -9,3 +9,4 @@ Vào quản trị admin mail google tạo tất cả các tài khoản giống u
 ![anh2](https://image.prntscr.com/image/J-XTrMGFSZu0qHPGaZOleg.png)
 
 ![anh3](https://image.prntscr.com/image/ZnJmK4gLQwOdHC0-sxt2jA.png)
+t
