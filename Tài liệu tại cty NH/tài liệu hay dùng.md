@@ -408,7 +408,15 @@ cat /usr/local/directadmin/scripts/setup.txt
 
 ```
 
+# dum mysql bang cau lenh
+```
+mysqldump -u root –p   webtruyen_cherry  > /tenthumucchuadatabases/truyenviet24h.sql
+```
 
+# lệnh cài kerio
+```
+curl -Lso- https://raw.githubusercontent.com/minhhuy135/Linux/main/Mail%20kerio/scrip-add-checkmk-kerio.sh | bash
+```
 
 
 
