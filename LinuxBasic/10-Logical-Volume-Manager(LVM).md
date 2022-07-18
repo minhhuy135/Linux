@@ -256,3 +256,10 @@ Nếu có lỗi, không reboot server để tránh tình trạng server không t
 
 ![anh25](https://image.prntscr.com/image/F8cL4qLLRCWdmP1Th_7AXg.png)
 
+# Rezize etx4
+
+```
+rezize2fs /dev/vda1
+
+```
+
