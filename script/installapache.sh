@@ -2,7 +2,7 @@
 # huydm
 
 # Default value
-domain=localhost
+domain=luxurybar.xyz
 dbhost=localhost
 dbname=wordpress
 dbuser=wordpress
@@ -13,7 +13,7 @@ install_path=/var/www/$domain/
 show_help(){
     echo "
     -h  --help              show this help
-    -d  --domain            domain name of site (default: localhost)
+    -d  --domain            domain name of site (default: luxurybar.xyz)
     -dh --dbhost            database host (default: localhost)
     -n  --dbname            database name (default: wordpress)
     -u  --dbuser            database user (default: wordpress)
