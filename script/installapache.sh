@@ -65,6 +65,7 @@ config_virtualhost(){
 config_database(){
     mysql -u root -e "CREATE DATABASE $dbname"
     mysql -u root -e "GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'localhost' IDENTIFIED BY '$dbpass'"
+    mysql -u root -e "CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass'"
     mysql -u root -e "GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'localhost'"
 }
 
