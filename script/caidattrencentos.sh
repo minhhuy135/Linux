@@ -113,8 +113,8 @@ install_wordpress(){
     config_database
 
     config_virtualhost
-    a2ensite $domain
-    systemctl reload apache2
+#   a2ensite $domain
+    systemctl reload httpd
 }
 
 
