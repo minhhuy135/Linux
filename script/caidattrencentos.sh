@@ -36,7 +36,7 @@ install_mysql(){
 
 #Install apache
 install_apache(){
-    apt-get install -y httpd
+    yum install -y httpd
     systemctl enable httpd
     systemctl start httpd
     
