@@ -1,12 +1,6 @@
 #!/bin/bash
 # huydm
 
-# update he thong
-
-wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-rpm -ivh mysql-community-release-el7-5.noarch.rpm
-yum update
-
 # Default value
 domain=zaraoder.xyz
 dbhost=localhost
