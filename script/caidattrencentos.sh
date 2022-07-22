@@ -36,7 +36,7 @@ install_mysql(){
 
 #Install apache
 install_apache(){
-    apt-get install -y httpd
+    yum install -y httpd
     systemctl enable httpd
     systemctl start httpd
     
@@ -113,8 +113,8 @@ install_wordpress(){
     config_database
 
     config_virtualhost
-    a2ensite $domain
-    systemctl reload apache2
+#   a2ensite $domain
+    systemctl reload httpd
 }
 
 
